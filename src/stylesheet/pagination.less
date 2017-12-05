@@ -1,0 +1,38 @@
+@import './variables.less';
+.el-pagination {
+        color: @theme-color-accent-lighten;
+        margin-top: 0.40rem;
+
+        &.text-align-left {
+                text-align: left;
+        }
+
+        &.text-align-center {
+                text-align: center;
+        }
+
+        &.text-align-right {
+                text-align: right;
+        }
+
+        .btn-prev,
+        .btn-next,
+        .number {
+                width: 0.68rem;
+                height: 0.68rem;
+                padding: 0.20rem;
+                border: 0;
+        }
+        
+        .el-pager li.active+li {
+                padding-left: 0.20rem;
+        }
+
+        .el-pager li:last-child {
+                border-right: 0;
+        }
+
+        .el-pager li.active {
+                background-color: @theme-color-accent-default;
+        }
+}

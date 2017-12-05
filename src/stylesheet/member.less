@@ -1,0 +1,104 @@
+@import './variables.less';
+.viewport-member {
+        background-color: @theme-color-lightgray-lightes;
+        padding: @theme-margin-size-default 0 @theme-margin-size-default * 2 0;
+        margin-top: @theme-size-border-default * 2.00;
+
+        .pure-menu-list {
+                border: @theme-size-border-default @theme-color-white-default solid;
+                box-shadow: @theme-boxshadow-border-default;
+        }
+
+        .pure-menu-link {
+                color: @theme-font-color-default;
+                font-size: @theme-font-size-common-default;
+                font-weight: @theme-font-weight-common-default;
+                background-color: @theme-color-white-default;
+                margin-bottom: @theme-size-border-default;
+                padding-left: 2.8em;
+                line-height: 2.8em;
+                height: 2.8em;
+
+                .icon {
+                        fill: @theme-color-darkgray-default;
+                        display: inline-block;
+                        width: @theme-font-size-mtitle-default;
+                        height: @theme-font-size-mtitle-default;
+                        vertical-align: -0.08rem;
+                        margin-right: @theme-margin-size-smaller;
+                }
+
+                &:hover {
+                        background-color: @theme-color-lightgray-lighter;
+                }
+
+                &.router-link-active,
+                &.router-link-active:hover {
+                        color: @theme-color-white-default;
+                        background-color: @theme-color-accent-lighten;
+
+                        .icon {
+                                fill: @theme-color-white-default;
+                        }
+                }
+        }
+
+        .pure-menu-link:lang(zh-cmn-Hans),
+        .pure-menu-link:lang(zh-cmn-Hant) {
+                padding-left: 1.12rem;
+        }
+
+        .pure-menu-item:last-child .pure-menu-link {
+                border: 0;
+                margin-bottom: 0;
+        }
+
+        .qrcode {
+                color: @theme-color-darkgray-default;
+                background-color: @theme-color-white-default;
+                border: @theme-size-border-default @theme-color-white-default solid;
+                margin-top: @theme-margin-size-default;
+                box-shadow: @theme-boxshadow-border-default;
+                padding: @theme-margin-size-largest 0;
+
+                img {
+                        display: block;
+                        width: @theme-size-unit-default * 10.00;
+                        height: @theme-size-unit-default * 10.00;
+                        border: @theme-size-border-default @theme-color-lightgray-lighten solid;
+                        margin: 0 auto;
+                }
+
+                section {
+                        font-size: @theme-font-size-common-default;
+                        font-weight: @theme-font-weight-common-default;
+                        line-height: @theme-font-lineheight-common-default;
+                        text-align: center;
+                        margin-top: @theme-margin-size-smaller;
+                }
+        }
+
+        .pure-u-20-24 {
+                .panel {
+                        background-color: @theme-color-white-default;
+                        padding-top: @theme-margin-size-smaller;
+                        padding-left: @theme-margin-size-largerm;
+                        padding-right: @theme-margin-size-largerm;
+                        padding-bottom: @theme-margin-size-default * 2.00;
+                        margin-left: @theme-margin-size-largerm;
+                        box-shadow: @theme-boxshadow-border-default;
+
+                        h1 {
+                                color: @theme-font-color-default;
+                                font-size: @theme-font-size-mtitle-default;
+                                font-weight: @theme-font-weight-mtitle-default;
+                                letter-spacing: @theme-font-spacing-default;
+                                padding-bottom: @theme-margin-size-smaller;
+                                box-shadow: @theme-boxshadow-bottom-lighten;
+                                line-height: @theme-size-height-default;
+                                height: @theme-size-height-default;
+                                margin: 0 0 @theme-margin-size-default 0;
+                        }
+                }
+        }
+}

@@ -1,0 +1,121 @@
+// Copyright 2017 The Haohaoxiuche Team Authors. All right reserved.
+// Use of this source that is governed by a Apache-style
+// license that can be found in the LICENSE file.
+//
+// 定义前端页面的样式表主题变量
+//
+// @authors hjboss <hongjiangproject@gmail.com> 2017-10 $$
+@theme-size-width-default:  27.00rem;
+@theme-size-width-maximum:  51.20rem;
+@theme-size-border-default: 0.02rem;
+@theme-size-border-radius:  0.00rem;
+@theme-size-unit-default:   0.32rem;
+@theme-size-height-default: @theme-size-unit-default * 2.50 + @theme-size-border-default * 2.00; // 0.84rem
+
+// 基本颜色规范
+@theme-color-white-default: #FFFFFF;
+@theme-color-black-default: #000000;
+@theme-color-shade-default: 6.50%;
+
+// 主题颜色规范
+@theme-color-accent-default: #4C75A3; // VK Blue
+@theme-color-accent-lighten: lighten(@theme-color-accent-default, @theme-color-shade-default * 1.00);
+@theme-color-accent-lighter: lighten(@theme-color-accent-default, @theme-color-shade-default * 2.0);
+@theme-color-accent-lightes: lighten(@theme-color-accent-default, @theme-color-shade-default * 3.00);
+@theme-color-accent-darkenl: darken( @theme-color-accent-default, @theme-color-shade-default * 1.00);
+@theme-color-accent-darkerm: darken( @theme-color-accent-default, @theme-color-shade-default * 2.00);
+@theme-color-accent-darkest: darken( @theme-color-accent-default, @theme-color-shade-default * 3.00);
+
+// 深度灰色规范
+@theme-color-darkgray-default: #767676; // chromeHigh Gray
+@theme-color-darkgray-lighten: lighten(@theme-color-darkgray-default, @theme-color-shade-default * 1.00);
+@theme-color-darkgray-lighter: lighten(@theme-color-darkgray-default, @theme-color-shade-default * 2.00);
+@theme-color-darkgray-lightes: lighten(@theme-color-darkgray-default, @theme-color-shade-default * 3.00);
+@theme-color-darkgray-darkenl: darken( @theme-color-darkgray-default, @theme-color-shade-default * 1.00);
+@theme-color-darkgray-darkerm: darken( @theme-color-darkgray-default, @theme-color-shade-default * 2.00);
+@theme-color-darkgray-darkest: darken( @theme-color-darkgray-default, @theme-color-shade-default * 3.00);
+
+// 浅度灰色规范
+@theme-color-lightgray-default: #E6E6E6; // chromeMedium Gray
+@theme-color-lightgray-lighten: lighten(@theme-color-lightgray-default, @theme-color-shade-default * 0.33);
+@theme-color-lightgray-lighter: lighten(@theme-color-lightgray-default, @theme-color-shade-default * 0.66);
+@theme-color-lightgray-lightes: lighten(@theme-color-lightgray-default, @theme-color-shade-default * 1.00);
+@theme-color-lightgray-darkenl: darken( @theme-color-lightgray-default, @theme-color-shade-default * 0.33);
+@theme-color-lightgray-darkerm: darken( @theme-color-lightgray-default, @theme-color-shade-default * 0.66);
+@theme-color-lightgray-darkest: darken( @theme-color-lightgray-default, @theme-color-shade-default * 1.00);
+
+// 浅度黄色规范
+@theme-color-yellow-default: #F1C40F; // Sunflower Yallow
+@theme-color-yellow-lighten: lighten(@theme-color-yellow-default, @theme-color-shade-default * 1.00);
+@theme-color-yellow-lighter: lighten(@theme-color-yellow-default, @theme-color-shade-default * 2.00);
+@theme-color-yellow-lightes: lighten(@theme-color-yellow-default, @theme-color-shade-default * 3.00);
+@theme-color-yellow-darkenl: darken( @theme-color-yellow-default, @theme-color-shade-default * 1.00);
+@theme-color-yellow-darkerm: darken( @theme-color-yellow-default, @theme-color-shade-default * 2.00);
+@theme-color-yellow-darkest: darken( @theme-color-yellow-default, @theme-color-shade-default * 3.00);
+
+// 浅度橙色规范
+@theme-color-orange-default: #E67E22; // Carrot Orange
+@theme-color-orange-lighten: lighten(@theme-color-orange-default, @theme-color-shade-default * 1.00);
+@theme-color-orange-lighter: lighten(@theme-color-orange-default, @theme-color-shade-default * 2.00);
+@theme-color-orange-lightes: lighten(@theme-color-orange-default, @theme-color-shade-default * 3.00);
+@theme-color-orange-darkenl: darken( @theme-color-orange-default, @theme-color-shade-default * 1.00);
+@theme-color-orange-darkerm: darken( @theme-color-orange-default, @theme-color-shade-default * 2.00);
+@theme-color-orange-darkest: darken( @theme-color-orange-default, @theme-color-shade-default * 3.00);
+
+// 中性红色规范
+@theme-color-red-default: #DD4B39; // Google Plus Red
+@theme-color-red-lighten: lighten(@theme-color-red-default, @theme-color-shade-default * 1.00);
+@theme-color-red-lighter: lighten(@theme-color-red-default, @theme-color-shade-default * 2.00);
+@theme-color-red-lightes: lighten(@theme-color-red-default, @theme-color-shade-default * 3.00);
+@theme-color-red-darkenl: darken( @theme-color-red-default, @theme-color-shade-default * 1.00);
+@theme-color-red-darkerm: darken( @theme-color-red-default, @theme-color-shade-default * 2.00);
+@theme-color-red-darkest: darken( @theme-color-red-default, @theme-color-shade-default * 3.00);
+
+// 字体基本规范
+@theme-font-family-default: 'Segoe UI', SegoeUI, 'Microsoft YaHei', '微软雅黑', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+@theme-font-spacing-default: 0.08em;
+
+// 字体尺寸规范
+@theme-font-size-header-default: 0.48rem;
+@theme-font-size-mtitle-default: 0.40rem;
+@theme-font-size-stitle-default: 0.36rem;
+@theme-font-size-common-default: 0.30rem;
+@theme-font-size-csmall-default: 0.26rem;
+
+// 字体行高规范
+@theme-font-lineheight-header-default: 0.56rem;
+@theme-font-lineheight-mtitle-default: 0.48rem;
+@theme-font-lineheight-stitle-default: 0.44rem;
+@theme-font-lineheight-common-default: 0.40rem;
+@theme-font-lineheight-csmall-default: 0.32rem;
+
+// 字体粗细规范
+@theme-font-weight-header-default: lighter;
+@theme-font-weight-mtitle-default: lighter;
+@theme-font-weight-stitle-default: lighter;
+@theme-font-weight-common-default: normal;
+@theme-font-weight-csmall-default: normal;
+
+// 字体颜色规范
+@theme-font-color-default: @theme-color-darkgray-default;
+@theme-font-color-lighten: @theme-color-darkgray-lighten;
+@theme-font-color-lighter: @theme-color-darkgray-lighter;
+@theme-font-color-lightes: @theme-color-white-default;
+@theme-font-color-darkenl: @theme-color-darkgray-darkenl;
+@theme-font-color-darkerm: @theme-color-darkgray-darkerm;
+@theme-font-color-darkest: @theme-color-darkgray-darkest;
+
+// 元素间距规范
+@theme-margin-size-default: @theme-size-unit-default;
+@theme-margin-size-smallen: @theme-margin-size-default * 0.75; // 0.24rem
+@theme-margin-size-smaller: @theme-margin-size-default * 0.50; // 0.16rem
+@theme-margin-size-largenl: @theme-margin-size-default * 1.25; // 0.40rem
+@theme-margin-size-largerm: @theme-margin-size-default * 1.50; // 0.48rem
+@theme-margin-size-largest: @theme-margin-size-default * 1.75; // 0.56rem
+
+// 边框阴影规范
+@theme-boxshadow-border-default: 0 0 @theme-size-border-default * 2.00 @theme-color-lightgray-lighten;
+@theme-boxshadow-border-lighten: 0 0 @theme-size-border-default * 2.00 rgba(0, 0, 0, @theme-color-shade-default * 2.00);
+@theme-boxshadow-bottom-default: 0 @theme-size-border-default * 2.00 0 @theme-color-lightgray-lighten;
+@theme-boxshadow-bottom-lighten: 0 @theme-size-border-default * 1.00 0 @theme-color-lightgray-lighten;
+@theme-boxshadow-bottom-lighter: 0 @theme-size-border-default * 0.50 0 @theme-color-lightgray-lighten;

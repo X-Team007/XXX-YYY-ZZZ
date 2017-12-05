@@ -1,0 +1,50 @@
+// Copyright 2017 The Haohaoxiuche Team Authors. All right reserved.
+// Use of this source that is governed by a Apache-style
+// license that can be found in the LICENSE file.
+//
+// 定义前端页面的公共样式表
+//
+// @authors hjboss <hongjiangproject@gmail.com> 2017-10 $$
+@import './variables.less';
+@import './pure.less';
+@import './flex.less';
+@import './form.less';
+@import './button.less';
+@import './pagination.less';
+@import './pay.less';
+@import './tab.less';
+@import './header.less';
+@import './footer.less';
+@import './languages.less';
+@import './message.less';
+@import './article.less';
+@import './member.less';
+@import './resume.less';
+
+html, body {
+        min-width: @theme-size-width-default;
+        overflow-x: hidden;
+        background-color: @theme-color-white-default;
+}
+
+.wrapper {
+        width: 100%;
+        max-width: @theme-size-width-default;
+        margin: 0 auto;
+}
+
+.right {
+        float: right;
+}
+
+.left {
+        float: left;
+}
+
+.clear {
+        clear: both !important;
+}
+
+a:focus {
+        outline-color: @theme-color-orange-default !important;
+}

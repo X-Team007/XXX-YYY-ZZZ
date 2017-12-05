@@ -1,0 +1,73 @@
+@import './variables.less';
+footer {
+        width: 100%;
+        min-width: @theme-size-width-default;
+        max-width: @theme-size-width-maximum;
+        margin: 0 auto;
+        background-color: @theme-color-white-default;
+
+        height: 7rem;
+        background-color: #3B87B3;
+        background-image: url("http://i4.cfimg.com/611341/65e1c363fc194232.jpg");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        nav {
+                height: 5.40rem;
+
+                .pure-menu-heading {
+                        display: inline-block;
+                        padding-top: 1.00rem;
+                        padding-left: 2.50rem;
+
+                        .pure-img {
+                                width: 3.00rem;
+                        }
+                }
+
+                .footer-nav {
+                        width: 18.00rem;
+                        margin-left: 9.00rem;
+                        margin-top: -4.20rem;
+
+                        .pure-menu-link,
+                        .pure-menu-link:link,
+                        .pure-menu-link:visited,
+                        .pure-menu-link:active,
+                        .pure-menu-link:hover {
+                                color: @theme-font-color-lightes;
+                                font-size: @theme-font-size-csmall-default;
+                                font-weight: @theme-font-weight-csmall-default;
+                                line-height: @theme-font-lineheight-csmall-default;
+                                padding-top: @theme-margin-size-smaller;
+                                padding-bottom: @theme-margin-size-smaller;
+                                background: transparent;
+                        }
+
+                        .footer-menu-header {
+                                color: @theme-font-color-lightes;
+                                font-size: @theme-font-size-stitle-default;
+                                font-weight: @theme-font-weight-stitle-default;
+                                line-height: @theme-font-lineheight-stitle-default;
+                                margin-bottom: @theme-margin-size-smaller;
+                        }
+
+                        .pure-menu-item .icon {
+                                width: @theme-font-size-mtitle-default;
+                                height: @theme-font-size-mtitle-default;
+                                fill: @theme-font-color-lightes;
+                                vertical-align: text-bottom;
+                        }
+                }
+        }
+
+        section {
+                color: @theme-font-color-lightes;
+                font-size: @theme-font-size-csmall-default;
+                font-weight: @theme-font-weight-csmall-default;
+                text-align: center;
+                line-height: 1.20rem;
+                height: 1.20rem;
+        }
+}

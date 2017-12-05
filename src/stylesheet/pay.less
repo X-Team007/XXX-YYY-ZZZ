@@ -1,0 +1,25 @@
+@import './variables.less';
+.icon-pay {
+        display: inline-block;
+        width: 3.00rem;
+        height: 1.00rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 3rem 1rem;
+        padding: @theme-margin-size-smallen @theme-margin-size-default;
+        cursor: pointer;
+        vertical-align: middle;
+        border: @theme-size-border-default * 2.00 @theme-color-white-default solid;
+
+        &.pay-active {
+                border-color: @theme-color-accent-lighter;
+        }
+
+        &.icon-pay-alipay {
+                background-image: url(../assets/img/alipay.png);
+        }
+
+        &.icon-pay-wxpay {
+                background-image: url(../assets/img/wxpay.png);
+        }
+}

@@ -1,0 +1,294 @@
+@import './variables.less';
+.pure-form {
+        display: inline-block;
+        color: @theme-font-color-default;
+        font-size: @theme-font-size-csmall-default;
+        font-weight: @theme-font-weight-csmall-default;
+        line-height: @theme-font-lineheight-csmall-default;
+
+        legend, h1 {
+                color: @theme-font-color-lightes;
+                font-size: @theme-font-size-header-default;
+                font-weight: @theme-font-weight-header-default;
+                letter-spacing: @theme-font-spacing-default;
+                text-align: center;
+                padding-bottom: @theme-margin-size-default;
+                border-width: 0.00;
+        }
+
+        label, 
+        .pure-control-group {
+                display: block;
+                padding: 0;
+                margin: 0;
+
+                select, input, button, .pure-button {
+                        display: inline-block !important;
+                        padding-top: @theme-margin-size-largenl * 0.50;
+                        padding-bottom: @theme-margin-size-largenl * 0.50;
+                        height: @theme-size-height-default;
+                        vertical-align: middle;
+                }
+
+                select {
+                        border-top-right-radius: 0.00;
+                        border-bottom-right-radius: 0.00;
+                }
+
+                input {
+                        font-weight: bolder;
+                        border-radius: 0.00 !important;
+                }
+
+                button, .pure-button {
+                        background-color: @theme-color-accent-lighten;
+                        letter-spacing: @theme-font-spacing-default;
+                        border: @theme-size-border-default @theme-color-accent-lighten solid;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                        padding-top: 0.923076em;
+                        padding-bottom: 0.923076em;
+                        opacity: 1.00;
+                }
+
+                option[disabled="disabled"] {
+                        color: @theme-font-color-lighter;
+                }
+        }
+
+        .pure-control-group {
+                margin-bottom: @theme-margin-size-smaller;
+        }
+
+        .label-mobile, 
+        .label-captcha,
+        .label-password,
+        .label-number,
+        .label-money {
+                input {
+                        letter-spacing: 0.5em;
+                }
+        }
+
+        .label-money {
+                input {
+                        text-align: right;
+                }
+        }
+
+        .label-mobile {
+                select {
+                        width: 2.00rem;
+                }
+
+                input {
+                        width: 5.00rem;
+                        margin-left: -@theme-margin-size-smaller * 0.50;
+                }
+        }
+
+        .label-captcha {
+                button {
+                        width: 3.50rem;
+                        margin-left: -@theme-margin-size-smaller * 0.50;
+                }
+
+                .pure-button-disabled,
+                .pure-button-disabled:link,
+                .pure-button-disabled:hover,
+                .pure-button-disabled:visited,
+                .pure-button-disabled:active {
+                        color: @theme-font-color-default;
+                        background-color: @theme-color-lightgray-lighter;
+                }
+
+                input {
+                        width: 3.50rem;
+                        margin: @theme-margin-size-largenl * 0.25 0 @theme-margin-size-smaller * 0.50 0;
+                }
+        }
+
+        .label-link {
+                text-align: center;
+                padding-top: 1.00em;
+
+                &, a {
+                        color: @theme-font-color-lightes;;
+                }
+
+                a {
+                        font-size: @theme-font-size-csmall-default;
+                        font-weight: @theme-font-weight-csmall-default;
+                        line-height: @theme-font-lineheight-csmall-default;
+                        text-decoration: none;
+                }
+        }
+
+        .label-warning {
+                text-align: center;
+                background-color: fade(@theme-color-black-default, @theme-color-shade-default * 1.00);
+                margin-top: @theme-margin-size-smallen * 0.50;
+                padding-top: @theme-margin-size-smallen * 0.50;
+                padding-bottom: @theme-margin-size-smallen * 0.50;
+
+                span {
+                        color: @theme-color-red-default;
+                        font-size: @theme-font-size-csmall-default;
+                        font-weight: @theme-font-weight-csmall-default;
+                        line-height: @theme-font-lineheight-csmall-default;
+                }
+        }
+
+        .label-checkbox {
+                color: @theme-font-color-lightes;
+                font-size: @theme-font-size-csmall-default;
+                font-weight: @theme-font-weight-csmall-default;
+                margin-top: 0.25em;
+                padding: 0.00;
+
+                &, input[type="checkbox"] {
+                        line-height: @theme-font-lineheight-mtitle-default;
+                        height: @theme-font-lineheight-mtitle-default;
+                }
+
+                a {
+                        color: @theme-font-color-lightes;
+                        margin-right: @theme-margin-size-smallen * 0.50;
+                }
+        }
+
+        .label-radio {
+                input[type="radio"] {
+                        margin-left: 0.50em;
+                }
+
+                span {
+                        padding-left: 0.25em;
+                        padding-right: 0.75em;
+                }
+        }
+
+        .label-submit {
+                padding-top: @theme-margin-size-largenl * 0.50;
+
+                button,
+                button:link,
+                button:visited,
+                button:hover {
+                        background-color: @theme-color-accent-lighten;
+                        border: @theme-size-border-default @theme-color-accent-lighten solid;
+                        width: 7.00rem;
+                }
+
+                button:active {
+                        background-color: @theme-color-accent-default;
+                }
+        }
+
+        .pure-control-group {
+                label {
+                        color: @theme-color-darkgray-default;
+                        font-size: @theme-font-size-common-default;
+                        font-weight: @theme-font-weight-common-default;
+                        line-height: @theme-font-lineheight-common-default;
+                }
+
+                input[type="text"],
+                input[type="password"] {
+                        width: 6.50rem;
+                }
+
+                &.label-submit {
+                        button {
+                                margin-left: 3.40rem;
+                                width: auto !important;
+                        }
+                }
+        }
+
+        .label-upload {
+                .uploader {
+                        display: inline-block;
+                        vertical-align: middle;
+                }
+
+                .el-upload {
+                        border: @theme-size-border-default @theme-color-lightgray-darkerm dashed;
+                        border-radius: @theme-size-border-radius;
+                        cursor: pointer;
+                        position: relative;
+                        overflow: hiddean;
+
+                        &:hover {
+                                border-color: @theme-color-accent-lighter;
+                        }
+
+                        .el-upload__input {
+                                display: none !important;
+                        }
+                }
+
+                .uploader-icon {
+                        font-size: @theme-font-size-header-default;
+                        color: @theme-color-darkgray-lightes;
+                        width: 2.40rem;
+                        height: 2.40rem;
+                        line-height: 2.40rem;
+                        text-align: center;
+                }
+
+                .avatar {
+                        width: 2.40rem;
+                        height: 2.40rem;
+                        display: block;
+                }
+        }
+
+        .label-idcard {
+                .pure-button {
+                        display: inline-block;
+                        width: 3.20rem;
+                }
+
+                input {
+                        width: 5.00rem;
+                        letter-spacing: 0.5em;
+                }
+        }
+}
+
+input::-webkit-input-placeholder {
+        color: @theme-font-color-lighten;
+        font-size: @theme-font-size-csmall-default;
+        font-weight: @theme-font-weight-csmall-default;
+        letter-spacing: @theme-font-spacing-default;
+}
+input::-moz-placeholder {
+        color: @theme-font-color-lighten;
+        font-size: @theme-font-size-csmall-default;
+        font-weight: @theme-font-weight-csmall-default;
+        letter-spacing: @theme-font-spacing-default;
+
+}
+input:-ms-input-placeholder {
+        color: @theme-font-color-lighten;
+        font-size: @theme-font-size-csmall-default;
+        font-weight: @theme-font-weight-csmall-default;
+        letter-spacing: @theme-font-spacing-default;
+}
+.browser-engine-gecko,
+.browser-engine-webkit,
+.browser-engine-edge {
+        select {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                background-color: @theme-color-white-default;
+                background-image: url(../assets/img/arrow.png);
+                background-position: right center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: @theme-margin-size-smallen;
+                padding-right: @theme-margin-size-smallen;
+        }
+        select::-ms-expand { display: none; }
+}

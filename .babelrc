@@ -1,0 +1,27 @@
+{
+        "presets": [
+                "es2015",
+                "stage-0"
+        ],
+        "plugins": [
+                "add-module-exports",
+                "transform-runtime",
+                "transform-vue-jsx",
+                "babel-plugin-add-module-exports",
+                "babel-plugin-transform-decorators-legacy",
+                [
+                        "transform-runtime",
+                        {
+                                "helpers": false,
+                                "polyfill": false
+                        }
+                ],
+                [
+                        "component",
+                        {
+                                "libraryName": "element-ui",
+                                "styleLibraryName": "theme-default"
+                        }
+                ]
+        ]
+}

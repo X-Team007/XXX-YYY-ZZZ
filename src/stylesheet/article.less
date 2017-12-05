@@ -1,0 +1,40 @@
+@import './variables.less';
+article {
+        color: #26282a;
+        font-size: 0.30rem;
+        padding: 0.40rem 0.30rem;
+
+        img {
+                display: block;
+                margin: 0.48rem auto;
+        }
+
+        p, h1 {
+                letter-spacing: 0.10em;
+        }
+
+        p {
+                line-height: 0.48rem !important;
+                margin: 0 0 0.30rem 0 !important;
+        }
+
+        h1 {
+                font-size: 0.36rem;
+                margin: 0.45rem 0 0.30rem 0 !important;
+        }
+
+        &:lang(zh-cmn-Hans),
+        &:lang(zh-cmn-Hant) {
+                color: #000000;
+
+                p,
+                h1 {
+                        text-indent: 0.60rem !important;
+                }
+
+                p {
+                        line-height: 0.56rem !important;
+                        margin: 0 0 0.36rem 0 !important;
+                }
+        }
+}

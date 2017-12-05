@@ -1,0 +1,101 @@
+@import './variables.less';
+
+.resume {
+        background-color: @theme-color-lightgray-lightes;
+        padding: @theme-margin-size-default 0 @theme-margin-size-default * 2.00 0;
+        margin-top: @theme-size-border-default * 2.00;
+
+        .step {
+                color: @theme-font-color-default;
+                font-size: @theme-font-size-common-default;
+                font-weight: @theme-font-weight-common-default;
+                line-height: @theme-font-lineheight-common-default * 2.00;
+                background-color: @theme-color-white-default;
+                padding: @theme-margin-size-smaller 0 @theme-margin-size-default 0;
+                box-shadow: @theme-boxshadow-border-default;
+
+                .step-common {
+                        text-align: center;
+
+                        em {
+                                font-style: normal;
+                                box-shadow: @theme-boxshadow-bottom-default;
+                                display: inline-block;
+                                width: 7.60rem;
+                        }
+                }
+
+                .step-active em {
+                        color: @theme-color-accent-lighten;
+                        box-shadow:  0 @theme-size-border-default * 2.00 0 @theme-color-accent-lighten;
+                }
+
+                .step-common-3th {
+                        width: 33.33%;
+                }
+        }
+
+        .panel {
+                background-color: @theme-color-white-default;
+                padding-top: @theme-margin-size-smaller;
+                padding-bottom: @theme-margin-size-default * 3.00;
+                margin-top: @theme-margin-size-default;
+                box-shadow: @theme-boxshadow-border-default;
+
+                h1 {
+                        color: @theme-font-color-default;
+                        font-size: @theme-font-size-mtitle-default;
+                        font-weight: @theme-font-weight-mtitle-default;
+                        letter-spacing: @theme-font-spacing-default;
+                        box-shadow: @theme-boxshadow-bottom-lighten;
+                        line-height: @theme-size-height-default;
+                        height: @theme-size-height-default;
+                        margin-top: @theme-margin-size-smaller;
+                        margin-right: @theme-margin-size-largerm;
+                        margin-bottom: @theme-margin-size-default;
+                        margin-left: @theme-margin-size-largerm;
+                        padding-bottom: @theme-margin-size-smaller;
+                        padding-left: @theme-margin-size-default;
+                }
+
+                .pure-form {
+                        margin-left: @theme-margin-size-largerm;
+                        margin-right: @theme-margin-size-largerm;
+                        margin-top: @theme-margin-size-largerm;
+
+                        label em {
+                                color: @theme-color-red-default;
+                        }
+
+                        input[type="text"],
+                        input[type="email"] {
+                                width: 9.50rem;
+                        }
+
+                        .pure-control-group {
+                                margin-bottom: @theme-margin-size-default;
+                        }
+
+                        .label-regions select {
+                                width: 2.32rem;
+                        }
+
+                        .label-mobile input {
+                                width: 7.50rem;
+                        }
+
+                        .label-idcard input {
+                                width: 6.20rem;
+                        }
+
+                        .label-warning {
+                                background-color: @theme-color-white-default;
+                        }
+
+                        .label-warning {
+                                text-align: left;
+                                padding-left: 3.40rem;
+                        }
+                }
+        }
+}

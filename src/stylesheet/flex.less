@@ -1,0 +1,18 @@
+@import './variables.less';
+
+.flex-layout {
+        display: flex;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+
+        &.flex-layout-row {
+                flex-flow: row;
+                justify-content: space-around;
+                align-content: space-between;
+        }
+
+        &.flex-layout-center {
+                justify-content: center;
+                align-items: center;
+        }
+}

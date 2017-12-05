@@ -1,0 +1,38 @@
+@import './variables.less';
+
+.pure-button {
+        font-size: @theme-font-size-csmall-default;
+        font-weight: @theme-font-weight-csmall-default;
+        line-height: @theme-font-lineheight-csmall-default;
+        letter-spacing: @theme-font-spacing-default;
+        height: 3.230770em;
+        padding: 0.923076em 2.25em;
+
+        border-radius: 0.08 !important;
+
+        &.button-noradius {
+                border-radius: 0.00rem !important;
+        }
+
+        &.pure-button-primary,
+        &.pure-button-primary:link,
+        &.pure-button-primary:hover,
+        &.pure-button-primary:visited {
+                background-color: @theme-color-accent-lighter;
+                border: @theme-size-border-default @theme-color-accent-lighter solid;
+        }
+
+        &.pure-button-primary:active {
+                background-color: @theme-color-accent-lighten;
+                border: @theme-size-border-default @theme-color-accent-default solid;
+        }
+
+        &.pure-button-disabled,
+        &.pure-button-disabled:link,
+        &.pure-button-disabled:hover,
+        &.pure-button-disabled:visited,
+        &.pure-button-disabled:active {
+                color: @theme-font-color-default;
+                background-color: @theme-color-lightgray-lighter;
+        }
+}

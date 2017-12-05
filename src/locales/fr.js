@@ -1,0 +1,63 @@
+// Copyright 2017 The Haohaoxiuche Team Authors. All right reserved.
+// Use of this source that is governed by a Apache-style
+// license that can be found in the LICENSE file.
+//
+// 定义前端页面的通用法语语言包
+//
+// @authors hjboss <hongjiangproject@gmail.com> 2017-10 $$
+export default {
+        headerSignin: 'Login',
+        headerSignup: 'Registre',
+        headerSignout: 'Fermer',
+        headerNavI: 'Maison',
+        headerNavII: 'Entrée',
+        headerNavIII: 'Recherche',
+        headerNavIV: 'Partager',
+        headerNavV: 'Equipe',
+        headerNavVI: 'News',
+        headerNavVII: 'Connaissances',
+        headerNavVIII: 'Utilisateur',
+        headerNavIIX: 'Archives',
+        headerNavIX: 'Compte',
+        headerNavX: 'Financier',
+        headerNavXI: 'Entreprise',
+        headerNavXII: 'Archives',
+        headerNavXIII: 'Compte',
+        headerNavIIX: 'Financier',
+        headerWelcome: 'Bienvenue à JDYX！',
+        headerHello: 'Bonjour！',
+        headerHome: 'Maison',
+        footerCopyright: 'Copyright © DATE JingDianYiXian Inc. Tous droits réservés.',
+        footerLanguages: 'Langue:',
+        footerAddress: 'Adresse',
+        footerProduct: 'Produits',
+        footerCompany: 'Entreprise',
+        footerAbout: 'Sur nous',
+        footerPrivate: 'Engagement de confidentialité',
+        footerTerms: ' Conditions d’utilisation',
+        footerHelp: 'FAQ',
+        footerSite: 'Plan du site',
+        homeBigshot: 'Grand Café',
+        homeTalent: 'Talent',
+        homeEntry: 'Entrée',
+        homeEnterprises: 'Entreprise',
+        homeMore: 'Plus',
+        homeSub: 'Exposition des talents de première ligne de Jingdian',
+        homePlaceholder: 'Clé de recherche',
+        homeSearchBtn: 'Recherche',
+        regionsPosition: 'Positionnement',
+        regionsChange: 'Changement',
+        regionsPlease: 'Sélection',
+        regionsSelect: 'Sélection Ville',
+        regionsGoback: 'Retournez',
+        newsAll: 'Tous',
+        newsTop: 'Populaire',
+        knowledgeAll: 'Connaissances',
+        signinMobile: '请输入常用手机号',
+        signinCode: '请输入收到的验证码',
+        signinHeader: '进入京典一线',
+        signupHeader: '注册京典一线',
+        signupPerson: '',
+        signupEnterprise: ''
+}
+

@@ -1,0 +1,30 @@
+@import './variables.less';
+
+.message {
+        font-size: @theme-font-size-common-default;
+        font-weight: @theme-font-weight-mtitle-default;
+        line-height: @theme-font-lineheight-mtitle-default;
+        letter-spacing: @theme-font-spacing-default;
+        padding: @theme-margin-size-default @theme-margin-size-largerm;
+
+        &.message-info {
+                color: @theme-font-color-default;
+                background-color: @theme-color-lightgray-lightes;
+
+                strong {
+                        color: @theme-color-red-default;
+                }
+
+                a {
+                        color: @theme-color-accent-default;
+                }
+        }
+
+        &.message-warning {
+                color: @theme-color-orange-default;
+                background-color: fade(@theme-color-yellow-default, @theme-color-shade-default * 2.00);
+                font-weight: normal;
+                padding-top: 0.60em !important;
+                padding-bottom: 0.60em !important;
+        }
+}
