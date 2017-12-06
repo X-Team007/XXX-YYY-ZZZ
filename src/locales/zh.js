@@ -152,6 +152,7 @@ export default {
         fulltime1stDateformat: '格式: 2000-01-01',
         // 个人中心新增字段
         accountDeveloping: '開發中...',
+        PersonCenterHello: '你好！',
 
         errors20Mobile: '請填寫正確的手機號碼',
         errors20PasswordLength: '密碼必須包含至少六位字符',

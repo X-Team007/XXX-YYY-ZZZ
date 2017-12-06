@@ -152,6 +152,7 @@ export default {
         fulltime1stDateformat: 'Format: 2000-01-01',
         // 个人中心新增字段
         accountDeveloping: 'developing...',
+        PersonCenterHello: 'hello!',
 
         errors20Mobile: 'Please input the correct mobile number',
         errors20PasswordLength: 'Password contains at least 6 characters',

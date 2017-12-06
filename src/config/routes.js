@@ -30,6 +30,7 @@ export default [
 		component: Person,
 		children: [{
 				path: '',
+				component: PersonCenter,
 				meta: {
 					auth: true
 				}
