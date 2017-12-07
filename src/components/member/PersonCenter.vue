@@ -155,7 +155,7 @@
         color: #fff;
         font-size: 0.36rem;
         font-weight: lighter;
-        background-color: #5d86b3;
+        background-color: @theme-color-accent-default;
       }
       h2 {
         height: 0.84rem;
@@ -169,6 +169,82 @@
         line-height: 0.44rem;
       }
       .jobInfo {
+        padding: 0.3rem 0;
+        overflow: hidden;
+        * {
+          margin: 0;
+          padding: 0;
+          font-size: 0.38rem;
+          line-height: 0.38rem;
+        }
+        .left {
+          padding-left: 0.5rem;
+          box-sizing: border-box;
+          h4 {
+            margin-bottom: 0.98rem;
+            color: @theme-color-accent-default;
+          }
+          p {
+            color: @theme-font-color-default;
+          }
+          p:nth-of-type(1) {
+            margin-bottom: 0.98rem;
+          }
+        }
+
+        .center {
+          .centerCon {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            p {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 3.1rem;
+              height: 3.1rem;
+              margin-left: 0.5rem;
+              border-radius: 50%;
+              background: #4c75a3;
+              span {
+                font-size: 0.7rem;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .right {
+          height: 3.1rem;
+          .rightCon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            .row {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              width: 100%;
+            }
+            p {
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              width: 2.6rem;
+              height: 0.84rem;
+              color: #4c75a3;
+              background: #fff;
+              border: 0.02rem solid #4c75a3;
+              border-radius: 0.08rem;
+            }
+            p:hover {
+              color: #fff;
+              background: #4c75a3;
+            }
+          }
+        }
       }
     }
 
@@ -187,6 +263,9 @@
       vertical-align: top;
       width: 19.72rem;
       margin-top: 0.48rem;
+      .left {
+        padding: 0;
+      }
     }
   }
   .full-time {
@@ -210,6 +289,7 @@
             </div>
             <div class="binding">
               <b></b>
+              <Icon name="phone"/>
               <span>未验证</span>
               <b></b>
               <span>未验证</span>
@@ -248,8 +328,28 @@
         <h2 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h2>
         <h3 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h3>
         <div class="pure-g jobInfo">
-          <div class="pure-u-2-8" style="background:#cbc;">
-            123
+          <div class="pure-u-6-24 left">
+            <h4>大堂经理</h4>
+            <p>类型:<span>标准简历</span></p>
+            <p>更新时间:<span>2017.08.09</span></p>
+          </div>
+          <div class="pure-u-10-24 center">
+            <div class="centerCon">
+              <span>档案完整度：</span>
+              <p><span>70%</span></p>
+            </div>
+          </div>
+          <div class="pure-u-8-24 right" style="">
+            <div class="rightCon">
+              <div class="row">
+                <p><span>预览简历</span></p>
+                <p><span>预览简历</span></p>
+              </div>
+              <div class="row">
+                <p><span>预览简历</span></p>
+                <p><span>预览简历</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -259,8 +359,28 @@
         <h2 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h2>
         <h3 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h3>
         <div class="pure-g jobInfo">
-          <div class="pure-u-2-8 jobInfo" style="background:#cbc;">
-            123
+          <div class="pure-u-6-24 left">
+            <h4>大堂经理</h4>
+            <p>类型:<span>标准简历</span></p>
+            <p>更新时间:<span>2017.08.09</span></p>
+          </div>
+          <div class="pure-u-10-24 center">
+            <div class="centerCon">
+              <span>档案完整度：</span>
+              <p><span>70%</span></p>
+            </div>
+          </div>
+          <div class="pure-u-8-24 right">
+            <div class="rightCon">
+              <div class="row">
+                <p><span>预览简历</span></p>
+                <p><span>预览简历</span></p>
+              </div>
+              <div class="row">
+                <p><span>预览简历</span></p>
+                <p><span>预览简历</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
