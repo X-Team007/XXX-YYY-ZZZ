@@ -30,13 +30,6 @@
           overflow: hidden;
           div {
             margin-right: 0.28rem;
-            b {
-              display: inline-block;
-              margin-right: 0.06rem;
-              width: 0.32rem;
-              height: 0.32rem;
-              background: #adc;
-            }
             span {
               color: @theme-color-lightgray-lighten;
               font-size: @theme-font-size-csmall-default;
@@ -67,10 +60,16 @@
           font-weight: @theme-font-weight-common-default;
           line-height: @theme-font-lineheight-csmall-default;
         }
+        .icon {
+          width: 0.32rem;
+          height: 0.32rem;
+          margin-right: 0.1rem;
+          fill: #b5b5b5;
+        }
       }
       .account {
         display: inline-block;
-        margin-left: 1.8rem;
+        margin-left: 0.5rem;
         font-size: 0;
         * {
           float: left;
@@ -288,12 +287,11 @@
               <span class="userName">{{lang.PersonCenterHello}}用户名获取字段？</span>
             </div>
             <div class="binding">
-              <b></b>
               <Icon name="phone"/>
               <span>未验证</span>
-              <b></b>
+              <Icon name="youxiang"></Icon>
               <span>未验证</span>
-              <b></b>
+              <Icon name="yanzheng"></Icon>
               <span>未验证</span>
             </div>
           </dd>
@@ -306,6 +304,7 @@
           <button type="button" class="pure-button pure-button-primary">
             <!-- {{ lang.financeSubmit }} -->提现
           </button>
+          <!-- <span>剩余免费查看次数：<b>3</b></span> -->
         </div>
       </div>
       <div class="checked">

@@ -23,6 +23,8 @@ import { IconSee } from './see'
 import { IconUnlock } from './unlock'
 import { IconWechat } from './wechat'
 import { IconWriter } from './writer'
+import { IconYouxiang } from './youxiang'
+import { IconYanzheng } from './yanzheng'
 
 export {
         IconAlipay,
@@ -49,5 +51,7 @@ export {
         IconSee,
         IconUnlock,
         IconWechat,
-        IconWriter
+        IconWriter,
+        IconYouxiang,
+        IconYanzheng
 }

@@ -23,6 +23,7 @@ import Password from '../components/member/Password'
 import Privacy from '../components/member/Privacy'
 import Account from '../components/member/Account'
 import Finance from '../components/member/Finance'
+import Wholookme from '../components/member/Wholookme'
 
 export default [
 	{
@@ -84,6 +85,7 @@ export default [
 			},
 			{
 				path: 'wholookme',
+				component: Wholookme
 				meta: {
 					auth: true
 				}
