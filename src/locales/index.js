@@ -27,8 +27,7 @@ export function langType() {
 }
 
 export function lang(name) {
-        let code = langType()
-
+        let code = langType();
         if (!name) {
                 return languages[code] || languages.cn
         }

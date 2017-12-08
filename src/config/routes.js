@@ -23,9 +23,8 @@ import Password from '../components/member/Password'
 import Privacy from '../components/member/Privacy'
 import Account from '../components/member/Account'
 import Finance from '../components/member/Finance'
-import Check from '../components/member/Check'
-import Quanzhi from '../components/member/Quanzhi'
-import Jianzhi from '../components/member/Jianzhi'
+import Iseewho from '../components/member/Iseewho'
+import Wholookme from '../components/member/Wholookme'
 
 export default [{
 		path: '/:lang/member',
@@ -80,55 +79,52 @@ export default [{
 			},
 			{
 				path: 'iseewho',
-				component: Check, // 重定向也得写模板
-				redirect: 'iseewho/quanzhi',
-				children: [{
-						path: 'quanzhi',
-						component: Quanzhi,
-						meta: {
-							auth: true
-						}
-					},
-					{
-						path: 'jianzhi',
-						component: Jianzhi,
-						meta: {
-							auth: true
-						}
-					}
-				],
+				component: Iseewho, // 重定向也得写模板
+				name: 'iseewho',
+				// redirect: 'iseewho/quanzhi',
+				// children: [
+					// 	{
+					// 		path: 'quanzhi',
+					// 		component: Quanzhi,
+					// 		meta: {
+					// 			auth: true
+					// 		}
+					// 	},
+					// 	{
+					// 		path: 'jianzhi',
+					// 		component: Jianzhi,
+					// 		meta: {
+					// 			auth: true
+					// 		}
+					// 	}
+				// ],
 				meta: {
 					auth: true
 				}
 			},
 			// {
-			// 	path: 'iseewho',
-			// 	meta: {
-			// 		auth: true
-			// 	}
+			// 	path: 'wholookme',
+			// 	redirect: 'wholookme/quanzhi'
 			// },
 			{
 				path: 'wholookme',
-				redirect: 'wholookme/quanzhi'
-			},
-			{
-				path: 'wholookme',
-				component: Check, // 重定向也得写模板
-				children: [{
-						path: 'quanzhi',
-						component: Quanzhi,
-						meta: {
-							auth: true
-						}
-					},
-					{
-						path: 'jianzhi',
-						component: Jianzhi,
-						meta: {
-							auth: true
-						}
-					}
-				],
+				component: Wholookme, // 重定向也得写模板
+				name: 'wholookme',
+				// children: [{
+					// 		path: 'quanzhi',
+					// 		component: Quanzhi,
+					// 		meta: {
+					// 			auth: true
+					// 		}
+					// 	},
+					// 	{
+					// 		path: 'jianzhi',
+					// 		component: Jianzhi,
+					// 		meta: {
+					// 			auth: true
+					// 		}
+					// 	}
+				// ],
 				meta: {
 					auth: true
 				}
