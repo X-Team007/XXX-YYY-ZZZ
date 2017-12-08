@@ -153,6 +153,8 @@ export default {
         // 个人中心新增字段
         accountDeveloping: 'developing...',
         PersonCenterHello: 'hello!',
+        fullTime: 'full-time',
+        partTime: 'part-time',
 
         errors20Mobile: 'Please input the correct mobile number',
         errors20PasswordLength: 'Password contains at least 6 characters',

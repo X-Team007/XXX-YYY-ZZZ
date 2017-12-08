@@ -153,6 +153,8 @@ export default {
         // 个人中心新增字段
         accountDeveloping: '开发中...',
         PersonCenterHello: '你好！',
+        fullTime: '全职',
+        partTime: '兼职',
 
         errors20Mobile: '请填写正确的手机号码',
         errors20PasswordLength: '密码至少包含六位字符',

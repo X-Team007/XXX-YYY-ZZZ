@@ -63,8 +63,11 @@
         .icon {
           width: 0.32rem;
           height: 0.32rem;
-          margin-right: 0.1rem;
+          margin: 0 0.1rem 0 0.34rem;
           fill: #b5b5b5;
+        }
+        .icon:nth-of-type(1) {
+          margin: 0 0.1rem 0 0;
         }
       }
       .account {
@@ -308,18 +311,18 @@
         </div>
       </div>
       <div class="checked">
-        <a href="">
+        <router-link to="iseewho">
           <dl class="checkUs">
             <dt>0</dt>
             <dd><span>我看了谁的简历</span></dd>
           </dl>
-        </a>
-        <a href="">
+        </router-link>
+        <router-link to="wholookme">
           <dl class="weCheck">
             <dt>0</dt>
             <dd><span>谁看了我的简历</span></dd>
           </dl>
-        </a>
+        </router-link>
       </div>
 		</div>
     <div class="panel full-time">
