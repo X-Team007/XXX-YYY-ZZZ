@@ -25,6 +25,8 @@ import Account from '../components/member/Account'
 import Finance from '../components/member/Finance'
 import Iseewho from '../components/member/Iseewho'
 import Wholookme from '../components/member/Wholookme'
+import Like from '../components/member/Like'
+import Follow from '../components/member/Follow'
 
 export default [{
 		path: '/:lang/member',
@@ -81,62 +83,28 @@ export default [{
 				path: 'iseewho',
 				component: Iseewho, // 重定向也得写模板
 				name: 'iseewho',
-				// redirect: 'iseewho/quanzhi',
-				// children: [
-					// 	{
-					// 		path: 'quanzhi',
-					// 		component: Quanzhi,
-					// 		meta: {
-					// 			auth: true
-					// 		}
-					// 	},
-					// 	{
-					// 		path: 'jianzhi',
-					// 		component: Jianzhi,
-					// 		meta: {
-					// 			auth: true
-					// 		}
-					// 	}
-				// ],
 				meta: {
 					auth: true
 				}
 			},
-			// {
-			// 	path: 'wholookme',
-			// 	redirect: 'wholookme/quanzhi'
-			// },
 			{
 				path: 'wholookme',
 				component: Wholookme, // 重定向也得写模板
 				name: 'wholookme',
-				// children: [{
-					// 		path: 'quanzhi',
-					// 		component: Quanzhi,
-					// 		meta: {
-					// 			auth: true
-					// 		}
-					// 	},
-					// 	{
-					// 		path: 'jianzhi',
-					// 		component: Jianzhi,
-					// 		meta: {
-					// 			auth: true
-					// 		}
-					// 	}
-				// ],
 				meta: {
 					auth: true
 				}
 			},
 			{
 				path: 'like',
+				component: Like,
 				meta: {
 					auth: true
 				}
 			},
 			{
 				path: 'follow',
+				component: Follow,
 				meta: {
 					auth: true
 				}
