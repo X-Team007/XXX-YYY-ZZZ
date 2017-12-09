@@ -39,7 +39,8 @@
                                                                 {{ lang.memberNavV }}
                                                         </router-link>
                                                 </li>
-                                                <li class="pure-menu-item">
+                                                <!-- 功能下线 -->
+                                                <!-- <li class="pure-menu-item">
                                                         <router-link :to="{ path: `/${langCode}/member/like/` }" class="pure-menu-link" exact>
                                                                 <Icon name="like" />
                                                                 {{ lang.memberNavVI }}
@@ -50,7 +51,7 @@
                                                                 <Icon name="follow" />
                                                                 {{ lang.memberNavVII }}
                                                         </router-link>
-                                                </li>
+                                                </li> -->
                                         </ul>
                                         <div class="qrcode">
                                                 <img class="pure-img" src="http://i1.cfimg.com/611341/e4572eedd7d0c9d5.png" />
