@@ -124,6 +124,7 @@ export default [{
 			},
 			{
 				path: 'resume',
+				redirect: '/:lang/entry',
 				meta: {
 					auth: true
 				}
@@ -164,12 +165,14 @@ export default [{
 			},
 			{
 				path: 'iseewho',
+				component: Iseewho,
 				meta: {
 					auth: true
 				}
 			},
 			{
 				path: 'wholookme',
+				component: Wholookme,
 				meta: {
 					auth: true
 				}

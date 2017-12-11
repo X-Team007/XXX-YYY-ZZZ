@@ -430,8 +430,6 @@ export default {
       }
     };
   },
-  created() {
-    console.log(111,this.$el);
-  }
+  created() {}
 };
 </script>

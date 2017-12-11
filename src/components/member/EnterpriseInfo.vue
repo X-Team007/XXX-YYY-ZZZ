@@ -269,10 +269,27 @@
         padding: 0;
       }
     }
-  }
-  .full-time {
-  }
-  .part-time {
+    section:lang(en) .jobInfo {
+      .rightCon {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        .row {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          p {
+            width: 5rem;
+            padding: 0.1rem;
+          }
+        }
+      }
+    }
   }
 }
 </style>
@@ -283,29 +300,29 @@
       <div class="accent">
         <dl class="userInfo">
           <dt>
-            <img class="userImg" :src="userSrc" alt="图片地址？">
+            <img class="userImg" :src="userSrc" alt="图片地址" title="头像">
           </dt>
           <dd>
             <div class="title">
-              <span class="userName">{{lang.PersonCenterHello}}用户名获取字段？</span>
+              <span class="userName">{{lang.PersonCenterHello}}{{userName}}</span>
             </div>
             <div class="binding">
               <Icon name="phone"/>
-              <span>未验证</span>
+              <span>{{lang.unverify}}</span>
               <Icon name="youxiang"></Icon>
-              <span>未验证</span>
+              <span>{{lang.unverify}}</span>
               <Icon name="yanzheng"></Icon>
-              <span>未验证</span>
+              <span>{{lang.unverify}}</span>
             </div>
           </dd>
         </dl>
         <div class="account">
-          <span class="sum">余额：<b>365</b>元</span>
+          <span class="sum">{{lang.balance}}<b>{{balance}}</b>元</span>
           <button type="button" class="pure-button pure-button-primary">
-            <!-- {{ lang.iseewho }} -->充值
+            {{ lang.pay }}
           </button>
           <button type="button" class="pure-button pure-button-primary">
-            <!-- {{ lang.financeSubmit }} -->提现
+            {{ lang.withdraw }}
           </button>
           <!-- <span>剩余免费查看次数：<b>3</b></span> -->
         </div>
@@ -313,39 +330,39 @@
       <div class="checked">
         <router-link to="iseewho">
           <dl class="checkUs">
-            <dt>0</dt>
+            <dt>{{iseewho}}</dt>
             <dd><span>{{lang.iseewho}}</span></dd>
           </dl>
         </router-link>
         <router-link to="wholookme">
           <dl class="weCheck">
-            <dt>0</dt>
+            <dt>{{wholookme}}</dt>
             <dd><span>{{lang.wholookme}}</span></dd>
           </dl>
         </router-link>
       </div>
 		</div>
-    <div class="panel full-time">
+    <!-- <div class="panel full-time">
       <section>
         <h2 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h2>
         <h3 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
-            <h4>大堂经理</h4>
-            <p>类型:<span>标准简历</span></p>
-            <p>更新时间:<span>2017.08.09</span></p>
+            <h4>{{fullTime.job}}</h4>
+            <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
+            <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
           </div>
           <div class="pure-u-10-24 center">
             <div class="centerCon">
-              <span>档案完整度：</span>
-              <p><span>70%</span></p>
+              <span>{{ lang.ArchivalCompleteness }}</span>
+              <p><span>{{fullTime.percent}}</span></p>
             </div>
           </div>
           <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
-                <p><span>预览简历</span></p>
-                <p><span>预览简历</span></p>
+                <p><span>{{ lang.preResume }}</span></p>
+                <p><span>{{ lang.modResume}}</span></p>
               </div>
               <div class="row">
                 <p><span>预览简历</span></p>
@@ -355,28 +372,28 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="panel part-time">
+    </div> -->
+    <!-- <div class="panel part-time">
       <section>
         <h2 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h2>
         <h3 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
-            <h4>大堂经理</h4>
-            <p>类型:<span>标准简历</span></p>
-            <p>更新时间:<span>2017.08.09</span></p>
+            <h4>{{fullTime.job}}</h4>
+            <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
+            <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
           </div>
           <div class="pure-u-10-24 center">
             <div class="centerCon">
-              <span>档案完整度：</span>
-              <p><span>70%</span></p>
+              <span>{{ lang.ArchivalCompleteness }}</span>
+              <p><span>{{fullTime.percent}}</span></p>
             </div>
           </div>
-          <div class="pure-u-8-24 right">
+          <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
-                <p><span>预览简历</span></p>
-                <p><span>预览简历</span></p>
+                <p><span>{{ lang.preResume }}</span></p>
+                <p><span>{{ lang.modResume }}</span></p>
               </div>
               <div class="row">
                 <p><span>预览简历</span></p>
@@ -386,7 +403,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -400,8 +417,19 @@ export default {
       auth: auth(),
       lang: lang(),
       langCode: langType(),
-      userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png"
+      userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
+      userName: "京典一线",
+      balance: "365",
+      iseewho: "10",
+      wholookme: "10",
+      fullTime: {
+        job: "大堂经理",
+        type: "普通简历",
+        time: "2017.08.09",
+        percent: "70%"
+      }
     };
-  }
+  },
+  created() {}
 };
 </script>
