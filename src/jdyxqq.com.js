@@ -16,38 +16,38 @@ import './stylesheet/normalize.less'
 import './index.html'
 
 (function () {
-        Vue.config.debug = setting.debug || false
-        Vue.config.devtools = setting.debug || false
-        Vue.use(VueRouter)
+	Vue.config.debug = setting.debug || false
+	Vue.config.devtools = setting.debug || false
+	Vue.use(VueRouter)
 
-        const router = new VueRouter({
-                routes,
-                mode: setting.history ? 'history' : 'hash'
-        })
+	const router = new VueRouter({
+		routes,
+		mode: setting.history ? 'history' : 'hash'
+	})
 
-        router.beforeEach(({
-                path,
-                meta
-        }, from, next) => {
-                let {
-                        auth = false
-                } = meta
-                let state = Boolean(Object.keys(utils.auth()).length !== 0)
+	router.beforeEach(({
+		path,
+		meta
+	}, from, next) => {
+		let {
+			auth = false
+		} = meta
+		let state = Boolean(Object.keys(utils.auth()).length !== 0)
 
-                if (auth && !state && /[a-zA-Z\-]{2,}\/signin$/i.test(path) === false) {
-                        return next({
-                                path: utils.uriPath(setting.pathSignin)
-                        })
-                }
+		if (auth && !state && /[a-zA-Z\-]{2,}\/signin$/i.test(path) === false) {
+			return next({
+				path: utils.uriPath(setting.pathSignin)
+			})
+		}
 
-                next()
-        })
+		next()
+	})
 
-        Object.keys(components).forEach(key => {
-                Vue.component(key.replace(/(\w)/, v => v.toUpperCase()), components[key])
-        })
+	Object.keys(components).forEach(key => {
+		Vue.component(key.replace(/(\w)/, v => v.toUpperCase()), components[key])
+	})
 
-        new Vue({
-                router
-        }).$mount('#jdyx-' + setting.appID)
+	window.apw = new Vue({
+		router
+	}).$mount('#jdyx-' + setting.appID)
 })()

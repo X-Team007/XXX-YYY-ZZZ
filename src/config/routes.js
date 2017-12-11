@@ -27,6 +27,7 @@ import Iseewho from '../components/member/Iseewho'
 import Wholookme from '../components/member/Wholookme'
 import Like from '../components/member/Like'
 import Follow from '../components/member/Follow'
+import EnterpriseInfo from '../components/member/EnterpriseInfo'
 
 export default [{
 		path: '/:lang/member',
@@ -116,6 +117,7 @@ export default [{
 		component: Enterprise,
 		children: [{
 				path: '',
+				component: EnterpriseInfo,
 				meta: {
 					auth: true
 				}

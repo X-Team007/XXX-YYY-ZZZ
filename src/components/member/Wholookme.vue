@@ -97,6 +97,9 @@
     div.jobs:nth-last-child(1) {
       box-shadow: none;
     }
+    .text-align-center {
+      margin-top: 0.3rem;
+    }
   }
 }
 </style>
@@ -138,16 +141,27 @@
           </div>
         </div>
       </template>
+      <el-pagination :total=" data.total " :page-size=" data.limit " :current-page=" data.begin " layout="prev, pager, next" class="text-align-center" @current-change=" selectPage " :key="ind"></el-pagination>
     </div>
   </div>
 </template>
 
 <script>
 import { lang, langType } from "../../locales";
-import { auth, uriPath } from "../../utils";
+import { api, auth, uriPath } from "../../utils";
+import { Pagination } from "element-ui";
+import setting from "../../config/setting";
+
 export default {
   data() {
     return {
+      data: {
+        begin: 0,
+        total: 0,
+        pages: 0,
+        limit: 10,
+        items: []
+      },
       auth: auth(),
       lang: lang(),
       langCode: langType(),
@@ -157,7 +171,6 @@ export default {
       templateData: {
         title: ""
       },
-      jobsCon: [],
       jobsContent: [
         {
           userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
@@ -232,14 +245,19 @@ export default {
       ]
     };
   },
+  components: {
+    "el-pagination": Pagination
+  },
   created() {
     this.getJobs();
     this.getJobTit();
   },
+  mounted() {},
   methods: {
     getJobTit() {
+      // 获取 不同组件的 标题
       let td = this.templateData;
-      let ur = uriPath().split("/")[3];
+      let ur = uriPath().split("/")[3]; // 截取路径的 字段 信息
       switch (ur) {
         case "wholookme":
           td.title = lang("memberNavV");
@@ -258,13 +276,53 @@ export default {
       }
     },
     getJobs() {
+      // 获取 全职/兼职 字段
       let job = this.jobs;
       job.fullTime = lang("fullTime");
       job.partTime = lang("partTime");
     },
     getInfo(index) {
+      // 设置绑定 全职/兼职 样式类名
       this.infoInd = index;
       console.log(123, index);
+    },
+    selectPage(num) {
+      // let parts = uriPath().split("/");
+      let ur = uriPath().split("/")[3];
+      switch (ur) {
+        case "wholookme":
+          // this.selectTab(parts[3] ? "wholookme#" + parts[3] : null, parts[1], num);
+          console.log("wholookme");
+          break;
+
+        case "iseewho":
+          // td.title = lang("memberNavIV");
+          console.log("我是Iseewho");
+          break;
+
+        case "like":
+          // td.title = lang("memberNavVI");
+          break;
+
+        case "follow":
+        // td.title = lang("memberNavVII");
+      }
+    },
+    selectTab(articleType, code, begin) {
+      api(
+        "/article/listKnowledge",
+        {
+          articleType: articleType,
+          articleLang: code || langType(),
+          begin: begin || 1,
+          limit: 10
+        },
+        callback => {
+          if (callback.code === 200) {
+            this.data = callback.data;
+          }
+        }
+      );
     }
   }
 };

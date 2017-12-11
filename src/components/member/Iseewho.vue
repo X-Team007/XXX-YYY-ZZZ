@@ -137,6 +137,8 @@
             </div>
           </div>
         </div>
+        <!-- <el-pagination :total=" data.total " :page-size=" data.limit " :current-page=" data.begin " layout="prev, pager, next" class="text-align-center" @current-change=" selectPage " :key="ind">
+        </el-pagination> -->
       </template>
     </div>
   </div>
@@ -144,10 +146,19 @@
 
 <script>
 import { lang, langType } from "../../locales";
-import { auth, uriPath } from "../../utils";
+import { api, auth, uriPath } from "../../utils";
+import { Pagination } from "element-ui";
+import setting from "../../config/setting";
+
 export default {
   data() {
     return {
+      data: {
+        total: 0,
+        pages: 0,
+        limit: 10,
+        items: []
+      },
       auth: auth(),
       lang: lang(),
       langCode: langType(),
@@ -237,7 +248,7 @@ export default {
     this.getJobTit();
   },
   methods: {
-    getJobTit() {
+    getJobTit() { // 获取 不同组件的 标题
       let td = this.templateData;
       let ur = uriPath().split("/")[3];
       switch (ur) {
