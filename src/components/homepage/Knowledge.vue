@@ -2,118 +2,118 @@
 @import "../../stylesheet/variables.less";
 
 .viewport-knowledge {
-        width: 21rem;
-        padding: 1.00rem 3.00rem;
+  width: 21rem;
+  padding: 1rem 3rem;
 
-        .topImage {
-                padding-bottom: 0.40rem;
-                width: 21rem;
-        }
+  .topImage {
+    padding-bottom: 0.4rem;
+    width: 21rem;
+  }
 
-        .pure-u-1-5 {
-                .pure-menu-heading {
-                        padding: 0 1rem 0 0.30rem;
+  .pure-u-1-5 {
+    .pure-menu-heading {
+      padding: 0 1rem 0 0.3rem;
 
-                        img {
-                                width: 2.24rem;
-                                margin-left: 0.00rem;
-                        }
+      img {
+        width: 2.24rem;
+        margin-left: 0rem;
+      }
 
-                        img:lang(zh-cmn-hans),
-                        img:lang(zh-cmn-hant) {
-                                margin-left: 0.30rem;
-                        }
-                }
+      img:lang(zh-cmn-hans),
+      img:lang(zh-cmn-hant) {
+        margin-left: 0.3rem;
+      }
+    }
 
-                .pure-menu-item {
-                        height: 1rem;
+    .pure-menu-item {
+      height: 1rem;
 
-                        .pure-button {
-                                display: block;
-                                height: 0.9rem;
-                                line-height: 0.5rem;
-                                color: @theme-color-white-default;
-                                font-size: 0.34rem;
-                                font-weight: lighter;
-                                text-align: left;
-                                letter-spacing: 0.05em;
-                                background: none;
-                                margin-left: 0.00rem;
-                                margin-right: 0.8rem;
-                                padding-top: 0.2rem;
-                                padding-bottom: 0.2rem;
-                        }
+      .pure-button {
+        display: block;
+        height: 0.9rem;
+        line-height: 0.5rem;
+        color: @theme-color-white-default;
+        font-size: 0.34rem;
+        font-weight: lighter;
+        text-align: left;
+        letter-spacing: 0.05em;
+        background: none;
+        margin-left: 0rem;
+        margin-right: 0.8rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+      }
 
-                        .pure-button:lang(zh-cmn-hans),
-                        .pure-button:lang(zh-cmn-hant) {
-                                text-align: center;
-                        }
+      .pure-button:lang(zh-cmn-hans),
+      .pure-button:lang(zh-cmn-hant) {
+        text-align: center;
+      }
 
-                        .router-link-active {
-                                color: @theme-color-white-default;
-                                background-color: @theme-color-accent-default;
-                                border-radius: 0.08rem;
-                        }
-                }
-        }
+      .router-link-active {
+        color: @theme-color-white-default;
+        background-color: @theme-color-accent-default;
+        border-radius: 0.08rem;
+      }
+    }
+  }
 
-        .news-list {
-                .pure-img {
-                        width: 4rem;
-                        height: 2.8rem;
-                        display: inline-block;
-                }
+  .news-list {
+    .pure-img {
+      width: 4rem;
+      height: 2.8rem;
+      display: inline-block;
+    }
 
-                .pure-menu-item {
-                        padding-top: 0.12rem;
-                }
+    .pure-menu-item {
+      padding-top: 0.12rem;
+    }
 
-                .news-list-box {
-                        display: block;
-                        padding: 0.2rem 0.2rem 0.4rem 0.2rem;
-                        text-decoration: none;
-                        margin-top: 0.2rem;
-                        box-shadow: 0 0.02rem 0 rgba(0, 0, 0, 0.1);
+    .news-list-box {
+      display: block;
+      padding: 0.2rem 0.2rem 0.4rem 0.2rem;
+      text-decoration: none;
+      margin-top: 0.2rem;
+      box-shadow: 0 0.02rem 0 rgba(0, 0, 0, 0.1);
 
-                        h1,
-                        section,
-                        code {
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                margin-left: 4.5rem;
-                        }
+      h1,
+      section,
+      code {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 4.5rem;
+      }
 
-                        h1 {
-                                color: @theme-color-white-default;
-                                font-size: 0.4rem;
-                                font-weight: normal;
-                                line-height: 0.6rem;
-                                width: 10rem;
-                                height: 0.6rem;
-                                margin-top: -3rem;
-                        }
+      h1 {
+        color: @theme-color-white-default;
+        font-size: 0.4rem;
+        font-weight: normal;
+        line-height: 0.6rem;
+        width: 10rem;
+        height: 0.6rem;
+        margin-top: -3rem;
+      }
 
-                        section,
-                        code {
-                                display: block;
-                        }
+      section,
+      code {
+        display: block;
+      }
 
-                        code {
-                                color: @theme-color-accent-default;
-                                font-size: 0.24rem;
-                                letter-spacing: 0.2em;
-                                margin-top: -0.16rem;
-                        }
+      code {
+        color: @theme-color-accent-default;
+        font-size: 0.24rem;
+        letter-spacing: 0.2em;
+        margin-top: -0.16rem;
+      }
 
-                        section {
-                                color: @theme-color-accent-default;
-                                font-size: 0.3rem;
-                                line-height: 0.56rem;
-                                height: 1.68rem;
-                                margin-top: 0.16rem;
-                        }
-                }
-        }
+      section {
+        color: @theme-color-accent-default;
+        font-size: 0.3rem;
+        line-height: 0.56rem;
+        height: 1.68rem;
+        margin-top: 0.16rem;
+      }
+    }
+  }
 }
 </style>
 
@@ -159,52 +159,56 @@
 
 
 <script>
-import { Pagination } from 'element-ui'
-import { lang, langType } from "../../locales"
-import { uriPath, api } from '../../utils'
-import setting from '../../config/setting'
+import { Pagination } from "element-ui";
+import { lang, langType } from "../../locales";
+import { uriPath, api } from "../../utils";
+import setting from "../../config/setting";
 
 export default {
-        data: function () {
-                let code = langType()
-                let cache = setting.cache || {}
-                console.log(cache.knowledge)
-                return {
-                        data: {
-                                total: 0,
-                                pages: 0,
-                                limit: 10,
-                                items: []
-                        },
-                        knowledge: cache.knowledge || [],
-                        lang: lang(),
-                        langCode: code
-                }
+  data: function() {
+    let code = langType();
+    let cache = setting.cache || {};
+    console.log(cache.knowledge);
+    return {
+      data: {
+        total: 0,
+        pages: 0,
+        limit: 10,
+        items: []
+      },
+      knowledge: cache.knowledge || [],
+      lang: lang(),
+      langCode: code
+    };
+  },
+  mounted: function() {
+    let parts = uriPath().split("/");
+    this.selectTab(parts[3] ? "knowledge#" + parts[3] : null, parts[1], 1);
+  },
+  methods: {
+    selectTab(articleType, code, begin) {
+      api(
+        "/article/listKnowledge",
+        {
+          articleType: articleType,
+          articleLang: code || langType(),
+          begin: begin || 1,
+          limit: 10
         },
-        mounted: function () {
-                let parts = uriPath().split('/')
-                this.selectTab(parts[3] ? 'knowledge#' + parts[3] : null, parts[1], 1)
-        },
-        methods: {
-                selectTab(articleType, code, begin) {
-                        api('/article/listKnowledge', {
-                                articleType: articleType,
-                                articleLang: code || langType(),
-                                begin: begin || 1,
-                                limit: 10
-                        }, callback => {
-                                if (callback.code === 200) {
-                                        this.data = callback.data
-                                }
-                        })
-                },
-                selectPage(num) {
-                        let parts = uriPath().split('/')
-                        this.selectTab(parts[3] ? 'knowledge#' + parts[3] : null, parts[1], num)
-                }
-        },
-        components: {
-                'el-pagination': Pagination
+        callback => {
+          if (callback.code === 200) {
+            this.data = callback.data;
+          }
         }
-}
+      );
+    },
+    selectPage(num) {
+      let parts = uriPath().split("/");
+      this.selectTab(parts[3] ? "knowledge#" + parts[3] : null, parts[1], num);
+    }
+  },
+  components: {
+    "el-pagination": Pagination
+  }
+};
 </script>
