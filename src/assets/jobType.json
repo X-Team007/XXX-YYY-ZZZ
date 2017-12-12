@@ -1,0 +1,547 @@
+  [
+    {
+      "中文": {
+        "生活|服务业": [{
+            "namne": "餐饮",
+            "item": [
+              "服务员", "送餐员", "厨师/厨师长", "后厨", "传菜员", "配菜/打荷", "洗碗工", "面点师", "茶艺师", "迎宾/接待", "大堂经理/领班", "餐饮管理", "学徒", "杂工", "咖啡师", "预订员"
+            ]
+          },
+          {
+            "name": "家政保洁/安保",
+            "item": [
+              "保洁", "保姆", "月嫂", "育婴师/保育员", "洗衣工", "钟点工", "保安", "护工", "送水工"
+            ]
+          },
+          {
+            "name": "美容/美发",
+            "item": [
+              "发型师", "美发助理/学徒", "洗头工", "美容导师", "美容师", "美容助理/学徒", "化妆师", "美甲师", "宠物美容", "美容店长", "美容/瘦身顾问", "彩妆培训师", "美体师"
+            ]
+          },
+          {
+            "name": "旅游",
+            "item": [
+              "订票员", "导游", "计调", "签证专员", "旅游顾问"
+            ]
+          },
+          {
+            "name": "娱乐/休闲",
+            "item": [
+              "酒吧服务员", "娱乐厅服务员", "礼仪/迎宾", "主持人", "调酒师", "音效师", "灯光师", "摄影师/摄像师", "影视/后期制作", "配音员", "放映员", "保健按摩", "按摩师", "足疗师", "搓澡工", "针灸推拿"
+            ]
+          },
+          {
+            "name": "运动健身",
+            "item": [
+              "健身教练", "瑜伽教练", "舞蹈老师", "游泳教练", "台球教练", "高尔夫球助理"
+            ]
+          }
+        ],
+        "人力|行政|管理": [{
+            "name": "人事/行政/后勤",
+            "item": [
+              "文员", "前台/总机/接待", "人事专员/助理", "人事经理/主管", "人事总监", "行政专员/助理", "行政经理/主管", "行政总监", "经理助理/秘书", "薪酬/绩效/员工关系", "猎头顾问", "后勤", "培训专员/助理", "培训经理/主管", "招聘专员/助理", "招聘经理/主管"
+            ]
+          },
+          {
+            "name": "司机",
+            "item": [
+              "商务司机", "客运司机", "货运司机", "出租车司机", "班车司机", "特种车司机", "驾校教练/陪练"
+            ]
+          },
+          {
+            "name": "高级管理",
+            "item": [
+              "CEO/总裁/总经理", "首席运营官COO", "首席财务官CFO", "首席技术官CTO", "副总裁/副总经理", "总裁助理/总经理助理", "总监", "分公司经理", "合伙人"
+            ]
+          }
+        ],
+        "销售|客服|采购|淘宝": [{
+            "name": "销售",
+            "item": [
+              "销售代表", "销售助理", "销售经理/主管", "销售总监", "电话销售", "销售支持", "汽车销售", "医药代表", "医疗器械销售", "网络销售", "区域销售", "渠道专员", "渠道经理/总监", "客户经理/主管", "大客户经理", "团购业务员/经理", "会籍顾问"
+            ]
+          },
+          {
+            "name": "客服",
+            "item": [
+              "客服专员/助理", "客服经理/主管", "客服总监", "售前/售后服务", "电话客服", "客户关系管理"
+            ]
+          },
+          {
+            "name": "贸易/采购",
+            "item": [
+              "外贸专员/助理", "外贸经理/主管", "采购员", "采购助理", "采购经理/总监", "报关员", "商务专员/经理", "买手"
+            ]
+          },
+          {
+            "name": "超市/百货/零售",
+            "item": [
+              "店员/营业员", "收银员", "促销/导购员", "理货员/陈列员", "防损员/内保", "店长/卖场经理", "招商经理/主管", "奢侈品业务", "品类管理", "食品加工/处理", "督导"
+            ]
+          },
+          {
+            "name": "淘宝职位",
+            "item": [
+              "网店店长", "淘宝客服", "淘宝美工", "店铺文案编辑", "店铺推广", "活动策划"
+            ]
+          },
+          {
+            "name": "房产中介",
+            "item": [
+              "房产经纪人", "置业顾问", "房产店长/经理", "房产店员/助理", "房产客服", "房产内勤", "房产评估师", "房产开发/策划", "其他房产职位"
+            ]
+          }
+        ],
+        "酒店": [{
+          "name": "酒店",
+          "item": [
+            "楼层经理", "洗衣房经理", "公共区域经理", "客房服务员", "房务部总监", "客房部经理", "预订经理", "预订员", "总机经理", "总机员工", "前厅部经理", "前台主管", "礼宾经理", "宾客关系主任", "前厅部员工", "大堂副理", "值班经理", "前台/接待", "救生员", "总经理", "总经理助理", "酒店店长"
+          ]
+        }],
+        "市场|媒介|广告|设计": [{
+            "name": "市场/媒介/公关",
+            "item": [
+              "市场专员/助理", "市场经理/总监", "市场拓展", "市场调研", "市场策划", "媒介专员/助理", "媒介经理/主管", "会务会展专员/经理", "品牌专员/经理", "公关专员/助理", "公关经理/主管", "企划经理/主管"
+            ]
+          },
+          {
+            "name": "广告/会展/咨询",
+            "item": [
+              "广告文案", "创意指导/总监", "广告设计/制作", "广告创意", "媒介策划/管理", "会展策划/设计", "婚礼策划师", "咨询顾问", "咨询经理/主管", "客户主管/专员", "企业策划"
+            ]
+          },
+          {
+            "name": "美术/设计/创意",
+            "item": [
+              "美编/美术设计", "服装设计", "家具/家居用品设计", "平面设计", "美术指导", "店面/陈列/展览设计", "工艺/珠宝设计", "多媒体/动画设计", "产品/包装设计", "装修装潢设计", "CAD设计/制图"
+            ]
+          }
+        ],
+        "生产|物流|质控|汽车": [{
+            "name": "普工/技工",
+            "item": [
+              "普工", "综合维修工", "制冷/水暖工", "电工", "木工", "钳工", "切割/焊工", "钣金工", "油漆工", "缝纫工", "锅炉工", "车工/铣工", "铲车/叉车工", "铸造/注塑/模具工", "电梯工", "操作工", "包装工", "手机维修", "水泥工", "钢筋工", "管道工", "瓦工", "组装工", "样衣工", "染工", "纺织工", "印花工", "压熨工"
+            ]
+          },
+          {
+            "name": "生产管理/研发",
+            "item": [
+              "质量管理", "总工程师/副总工程师", "设备管理维护", "工艺设计", "车间主任", "生产计划", "化验/检验", "厂长/副厂长", "生产总监", "维修工程师", "工业工程师", "材料工程师", "技术工程师", "生产主管/组长"
+            ]
+          },
+          {
+            "name": "物流/仓储",
+            "item": [
+              "物流专员/助理", "物流经理/主管", "物流总监", "调度员", "快递员", "仓库管理员", "仓库经理/主管", "装卸/搬运工", "供应链管理", "单证员", "国际货运"
+            ]
+          },
+          {
+            "name": "服装/纺织/食品",
+            "item": [
+              "服装设计师", "纺织品设计师", "服装打样/制版", "生产管理", "样衣工", "食品/饮料研发/检验", "板房/底格出格师", "电脑放码员", "纸样师/车板工"
+            ]
+          },
+          {
+            "name": "质控/安防",
+            "item": [
+              "质量管理/测试经理", "质量检验员/测试员", "测试工程师", "安全消防", "认证工程师/审核员", "安全管理"
+            ]
+          },
+          {
+            "name": "汽车制造/服务",
+            "item": [
+              "汽车设计工程师", "装配工艺工程师", "汽车/摩托车修理", "汽车机械工程师", "汽车电子工程师", "4S店管理", "汽车检验/检测", "汽车美容", "二手车评估师", "发动机/总装工程师", "安全性能工程师", "理赔专员/顾问", "洗车工", "停车管理员", "加油站工作员", "轮胎工"
+            ]
+          }
+        ],
+        "网络|通信|电子": [{
+            "name": "计算机/互联网/通信",
+            "item": [
+              "技术总监/经理", "技术支持/维护", "技术专员/助理", "软件工程师", "程序员", "硬件工程师", "质量工程师", "测试工程师", "系统架构师", "数据库管理/DBA", "游戏设计/开发", "网页设计/制作", "语音/视频/图形", "项目经理/主管", "产品经理/专员", "网站运营", "网站编辑", "网站策划", "网络管理员", "网络与信息安全工程师", "实施工程师", "通信技术工程师"
+            ]
+          },
+          {
+            "name": "电子/电气",
+            "item": [
+              "自动化工程师", "电子/电气工程师", "电路工程师/技术员", "无线电工程师", "测试/可靠性工程师", "产品工艺/规划工程师", "音频/视频工程师", "灯光/照明设计工程师", "研发工程师", "电子/电器维修"
+            ]
+          },
+          {
+            "name": "机械/仪器仪表",
+            "item": [
+              "机电工程师", "机械工程师", "研发工程师", "测试/可靠性工程师", "版图设计工程师", "仪器/仪表/计量"
+            ]
+          }
+        ],
+        "法律|教育|翻译|出版": [{
+            "name": "法律",
+            "item": [
+              "律师/法律顾问", "律师助理", "法务专员/主管", "产权/专利顾问", "合规管理"
+            ]
+          },
+          {
+            "name": "教育培训",
+            "item": [
+              "教师/助教", "家教", "幼教/早教", "培训师/讲师", "培训策划", "培训助理", "教学/教务管理", "教育产品开发", "学术研究/科研", "招生/课程顾问", "校长", "野外拓展训练师"
+            ]
+          },
+          {
+            "name": "翻译",
+            "item": [
+              "英语翻译", "日语翻译", "韩语翻译", "法语翻译", "俄语翻译", "德语翻译", "西班牙语翻译", "意大利语翻译", "葡萄牙语翻译", "阿拉伯语翻译", "小语种翻译"
+            ]
+          },
+          {
+            "name": "编辑/出版/印刷",
+            "item": [
+              "总编/副总编/主编", "编辑/撰稿", "记者/采编", "出版/发行", "排版设计/制作", "印刷操作", "装订/烫金"
+            ]
+          }
+        ],
+        "财会|金融|保险": [{
+            "name": "财务/审计/统计",
+            "item": [
+              "财务经理/主管", "财务总监", "会计/会计师", "财务/会计助理", "出纳", "审计专员/助理", "审计经理/主管", "统计员", "税务专员/助理", "税务经理/主管", "财务分析员", "成本管理员"
+            ]
+          },
+          {
+            "name": "金融/银行/证券/投资",
+            "item": [
+              "证券/期货/外汇经纪人", "证券经理/总监", "证券分析/金融研究", "信用卡/银行卡业务", "银行经理/主任", "银行会计/柜员", "信贷管理/资信评估", "资产评估", "担保/拍卖/典当", "拍卖师", "外汇/基金/国债经理人", "投资/理财顾问", "融资专员", "融资经理/总监", "风险管理/控制", "股票交易员"
+            ]
+          },
+          {
+            "name": "保险",
+            "item": [
+              "储备经理人", "保险客户经理", "车险专员", "保险内勤", "保险培训师", "保险客服", "保险顾问", "保险经纪人", "保险项目经理", "保险精算师", "保险其他职位"
+            ]
+          }
+        ],
+        "医疗|制药|环保": [{
+            "name": "医院/医疗/护理",
+            "item": [
+              "医生", "保健医生", "心理医生", "护士/护理", "护理主任/护士长", "导医", "药剂师", "理疗师", "医药质检", "医疗管理", "美容整形师", "验光师", "营养师", "宠物护理/兽医"
+            ]
+          },
+          {
+            "name": "制药/生物工程",
+            "item": [
+              "医药研发/生产/注册", "临床研究/协调", "生物工程/生物制药", "医疗器械研发/维修"
+            ]
+          },
+          {
+            "name": "环保",
+            "item": [
+              "污水处理工程师", "环境工程技术", "环境管理/保护", "环保技术", "EHS管理", "环保工程师", "环保检测", "水质检测员", "环境绿化"
+            ]
+          }
+        ],
+        "建筑|装修|物业|其他": [{
+            "name": "建筑",
+            "item": [
+              "工程项目管理", "工程监理", "建筑工程师/总工", "土木/土建工程师", "造价师/预算师", "幕墙工程师", "安防工程师", "安全管理/安全员", "道路桥梁技术", "给排水/制冷/暖通", "测绘/测量", "园林/景观设计", "资料员", "市政工程师", "综合布线/弱电"
+            ]
+          },
+          {
+            "name": "物业管理",
+            "item": [
+              "物业管理员", "物业维修", "物业经理/主管", "合同管理", "招商经理/主管"
+            ]
+          },
+          {
+            "name": "农/林/牧/渔业",
+            "item": [
+              ["饲料业务", "养殖人员", "农艺师/花艺师", "畜牧师", "场长", "养殖部主管", "动物营养/饲料研发"]
+            ]
+          },
+          {
+            "name": "其他招聘信息",
+            "item": [
+              "其他职位"
+            ]
+          },
+          {
+            "name": "招聘会",
+            "item": [
+              "专场招聘会", "应届生招聘会", "综合招聘会", "中高级人才招聘会"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "english": {
+        "Live|services": [{
+            "namne": "dining",
+            "item": [
+              "Waiter", "delivery agent", "the cook/chef", "the kitchen", "pass-through member", "dishes/lotus", "dishwasher", "pastry chef", "tea", "welcome/reception", "the lobby manager/foreman", "catering management", "the apprentice", "handyman", "coffee", "reservation"
+            ]
+          },
+          {
+            "name": "Household cleaning/Securency",
+            "item": [
+              "Cleaning", "nanny", "month sister-in-law", "the nursery teacher/nurse", "laundryman", "maid", "security", "care", "industry sending water"
+            ]
+          },
+          {
+            "name": "Beauty/hairdressing",
+            "item": [
+              "Hair", "salon assistant/apprentice", "shampoo", "cosmetology mentor", "beautician", "beauty assistant/apprentice", "makeup", "manicurist", "pet beauty", "beauty manager", "beauty/slimming consultant", "make-up trainer", "body teacher"
+            ]
+          },
+          {
+            "name": "travel",
+            "item": [
+              "Booking clerk", "tour guide", "plan", "visa officer", "travel consultant"
+            ]
+          },
+          {
+            "name": "Entertainment/leisure",
+            "item": [
+              "The bartender", "recreation waiter", "etiquette/hospitality", "the host","The bartender", "sound", "lighting engineers", "the photographer/photographer", "the film and television/post-production", "dubbing staff", "then", "massage", "massage", "pedicures", "rub zao work", "acupuncture and massage"
+            ]
+          },
+          {
+            "name": "exercise and fitness",
+            "item": [
+              "Fitness instructor", "yoga instructor", "dance teacher", "swimming coach", "coach of billiards", "golf assistant"
+            ]
+          }
+        ],
+        "Hr|executive|management": [
+          {
+            "name": "Hr/admin/logistics",
+            "item": [
+              "Agent", "front desk/operator/reception", "hr specialist/assistant", "personnel manager/supervisor", "hr director", "administrative specialist/assistant", "administrative manager/supervisor", "executive director", "assistant manager/secretary", "pay/performance/employee relationship", "executive search consultant", "logistics", "training specialist/assistant", "training manager/supervisor", "recruiting specialist/assistant", "the hiring manager/supervisor"
+            ]
+          },
+          {
+            "name": "driver",
+            "item": [
+              "Business drivers", "passenger driver", "freight driver", "taxi driver", "bus driver", "special vehicle driver", "driving school coach/partners"
+            ]
+          },
+          {
+            "name": "senior management",
+            "item": [
+              "CEO/President/general manager", "COO", "CFO", "CTO", "Vice President/vice President", "President Assistant", "chief inspector", "branch manager", "partner"
+            ]
+          }
+        ],
+        "Sales|customer service|purchase|taobao": [{
+            "name": "sell",
+            "item": [
+              "Sales representative", "sales assistant", "the sales manager/supervisor", "sales director", "telemarketing", "sales support", "sales", "medical representative", "medical equipment sales", "network marketing", "regional sales", "channel commissioner", "channel manager/director", "customer manager/supervisor", "key account manager", "group buying agent/manager", "life"
+            ]
+          },
+          {
+            "name": "customer service",
+            "item": [
+              "Customer service specialist/assistant", "customer service manager/supervisor", "the director of the service", "before/after sales services", "call", "customer relationship management (CRM)"
+            ]
+          },
+          {
+            "name": "Trading/Purchase",
+            "item": [
+              "Trade commissioner/assistant", "Foreign trade manager/supervisor", "buyer", "procurement assistant", "Purchasing manager/director", "customs declarer", "Business specialist/manager", "buyer"
+            ]
+          },
+          {
+            "name": "Supermarket/department store/retail",
+            "item": [
+              "Store Manager Trainee/Salesperson", "cashier", "Promotion/merchandising", "tally clerk/David Mayer Naman", "Loss Prevention Specialist/Uchiho", "shop manager/Store manager", "sponsorship manager/be in charge of", "Luxury business", "category management", "Food processing/processing", "councilor"
+            ]
+          },
+          {
+            "name": "淘宝职位",
+            "item": [
+              "网店店长", "淘宝客服", "淘宝美工", "店铺文案编辑", "店铺推广", "活动策划"
+            ]
+          },
+          {
+            "name": "房产中介",
+            "item": [
+              "房产经纪人", "置业顾问", "房产店长/经理", "房产店员/助理", "房产客服", "房产内勤", "房产评估师", "房产开发/策划", "其他房产职位"
+            ]
+          }
+        ],
+        "hotel": [{
+          "name": "hotel",
+          "item": [
+            "Floor manager", "laundry manager", "public area manager", "housekeeping", "director of rooms division", "housekeeper", "reservation manager", "reservation", "operator manager", "operator staff", "front office manager", "front desk supervisor", "concierge manager", "guest relations officer", "the front office staff", "assistant manager", "the manager on duty", "front desk/reception", "lifeguard", "general manager", "general manager assistant", "hotel manager"
+          ]
+        }],
+        "Market|medium|advertising|design": [{
+            "name": "Market/media/public relations",
+            "item": [
+              "Marketing specialist/assistant", "marketing manager/director", "market development", "market research", "market planning", "media specialist/assistant", "media manager/supervisor", "meeting exhibition commissioner/manager", "brand specialist/manager", "public relations specialist/assistant", "public relations manager/supervisor", "project manager/supervisor"
+            ]
+          },
+          {
+            "name": "Advertising/exhibition/consulting",
+            "item": [
+              "Copy", "creative direction/director", "advertising design/production", "creative", "media planning/management", "exhibition planning/design", "wedding planner", "consultants", "consulting manager/supervisor", "customer supervisor/commissioner", "enterprise planning"
+            ]
+          },
+          {
+            "name": "Art/design/creativity",
+            "item": [
+              "Art/art design", "fashion design", "furniture/household design", "graphic design", "art direction", "store/display/exhibition design", "process/jewelry design", "multimedia/animation design", "product/packaging design", "decoration decoration design", "CAD design/drawing"
+            ]
+          }
+        ],
+        "Produce|logistics|quality control|car": [{
+            "name": "Puter/mechanic",
+            "item": [
+              "general worker", "Technician", "Refrigeration/water heater", "electrician", "woodworking", "bench worker", "Cutting/welder", "metaler", "painter", "seamer", "Fireman", "Turner/miller", "forklift/forklift worker", "casting/plastic injection mould worker", "elevator operator", "operator", "packaging", "mobile phone maintenance", "concrete work", "steel fixer", "plumber", "bricklayer's", "assembly", "sample", "dyer", "weavers", "printer", "pressing work"
+            ]
+          },
+          {
+            "name": "production management/research and development",
+            "item": [
+              "Quality management", "chief engineer/assistant chief engineer", "equipment maintenance management", "process design", "workshop director", "production plan", "test/inspection", "the director/deputy director", "production director", "maintenance engineer", "industrial engineers", "material engineer", "engineer", "production supervisor/team leader"
+            ]
+          },
+          {
+            "name": "Logistics/Warehouse",
+            "item": [
+              "Logistics specialist/assistant", "logistics manager/supervisor", "the director of logistics", "operator", "Courier", "warehouse keeper", "warehouse manager/supervisor", "handling/porter", "supply chain management", "years", "international shipping"
+            ]
+          },
+          {
+            "name": "Clothing/textiles/food",
+            "item": [
+              "Designer", "the textile designer", "clothing proofing/plate", "production management", "sample", "research and development of food/beverage/inspection", "end of the housing/out division", "computer grading member", "pattern division/plate work"
+            ]
+          },
+          {
+            "name": "Quality control/security",
+            "item": [
+              "Quality management/test manager", "quality inspector/tester", "test engineer", "fire safety", "certified engineer/inspector", "safety management"
+            ]
+          },
+          {
+            "name": "Car manufacturing/services",
+            "item": [
+              "Car design engineer", "assembly process engineer", "car/motorcycle repair", "auto mechanical engineer", "auto electronic engineer", "4s shop management", "auto inspection/test", "car beauty", "used car appraiser", "engine/assembly engineer", "safety engineer", "claims specialist/consultant", "wash Turner", "parking administrator", "gas station clerk", "tire industry"
+            ]
+          }
+        ],
+        "Network|communication|electron": [{
+            "name": "Technology/Internet",
+            "item": [
+              "Technical director/manager", "technical support/maintenance", "technical specialist/assistant", "software engineer", "programmer", "hardware engineer", "quality engineer", "test engineer", "system architect", "database management/DBA", "game design/development", "web design/production", "voice/video/graphics", "project manager/supervisor", "product manager/specialist", "website", "website editor", "site planning", "network administrator", "network and information security engineer", "implementation engineer", "communication technology engineer"
+            ]
+          },
+          {
+            "name": "Electronic/electrical",
+            "item": [
+              "Automation engineer", "electrical/electronic engineer", "circuit engineers/technicians", "radio engineers", "test/reliability engineer", "product technology/planning engineer", "audio/video engineer", "light/lighting design engineer", "engineer", "electronics/electrical maintenance"
+            ]
+          },
+          {
+            "name": "Machinery/instrumentation",
+            "item": [
+              "Mechanical and electrical engineers", "mechanical engineer", "engineer", "test/reliability engineer", "landscape design engineer", "equipment/instrument/measurement"
+            ]
+          }
+        ],
+        "Law|education|translation|publication": [{
+            "name": "law",
+            "item": [
+              "Solicitor/legal adviser", "solicitor", "legal commissioner/supervisor", "property/patent adviser", "compliance management"
+            ]
+          },
+          {
+            "name": "educational training",
+            "item": [
+              "The teacher/ta", "family education", "school/early education", "trainer/instructor", "training plan", "training assistant", "teaching/educational administration", "education product development", "academic study/research", "admission/course consultant", "the principal", "outdoor trainer"
+            ]
+          },
+          {
+            "name": "translate",
+            "item": [
+              "English translation", "Japanese translation, Korean translation", "French translation", "Russian translation", "German translation", "Spanish translation", "Italian translation", "the Portuguese translation", "Arabic translation", "small language translation"
+            ]
+          },
+          {
+            "name": "Edit/publish/print",
+            "item": [
+              "Editor/associate editor/editor", "editor/contributor", "the reporter/editorial", "print/issue", "layout design/production", "printing operation", "binding/hot stamping"
+            ]
+          }
+        ],
+        "Accounting|financial|insurance": [{
+            "name": "Finance/Accounting",
+            "item": [
+              "Financial manager/supervisor", "chief financial officer", "accounting/accountant", "finance/accounting assistant", "cashier", "audit specialist/assistant", "the audit manager/supervisor", "volunteers", "tax specialist/assistant", "tax manager/supervisor", "financial analyst", "cost administrator"
+            ]
+          },
+          {
+            "name": "Finance/banking/securities/investment",
+            "item": [
+              "security/futures/exchange broker", "Securities managers/chief inspector", "security analysis/finance research", "Credit card/bank card business", "the bank manager/director", "bank accounting/teller", "credit management/credit evaluation", "assets", "guarantee/sale/pawn", "the auctioneer/foreign exchange /funds/Treasury manager", "investment/financial adviser", "commissioner of financing", "finance manager/director", "risk management/control", "stock trader"
+            ]
+          },
+          {
+            "name": "insurance",
+            "item": [
+              "Reserve managers", "insurance account manager", "car insurance commissioner", "back office insurance", "insurance trainer", "customer service insurance", "insurance adviser", "insurance broker", "project manager of insurance", "actuaries", "insurance other positions"
+            ]
+          }
+        ],
+        "Medical|pharma|environmental protection": [{
+            "name": "Hospital/Medicine/Nursing",
+            "item": [
+              "Doctor", "care doctor", "psychological doctor", "/ nursing", "nursing director/head nurse", "DaoYi", "the pharmacist", "physical therapist", "medical quality inspection", "medical management", "cosmetic surgery", "an optometrist", "dietitian", "pet care/veterinary"
+            ]
+          },
+          {
+            "name": "Pharmaceuticals/Biotechnology",
+            "item": [
+              "Pharmaceutical r&d/production/registration", "clinical study/coordination", "bioengineering/biopharmaceutical", "r&d/maintenance of medical devices"
+            ]
+          },
+          {
+            "name": "environmental protection",
+            "item": [
+              "Sewage engineer", "environmental engineering", "environmental management/protection", "green technology", "EHS management", "environmental engineer", "environmental test", "water quality inspector", "environmental greening"
+            ]
+          }
+        ],
+        "Building|decoration|property|other": [{
+            "name": "architecture",
+            "item": [
+              "Project management", "project supervision", "construction engineer/general", "civil/civil engineer", "division/budget and cost", "curtain wall engineer", "security engineer", "safety management/security officer", "road and bridge technology", "water supply and drainage/refrigeration/hvac", "/ measurement of surveying and mapping", "garden/landscape design", "operate", "municipal engineer", "integrated wiring/ba"
+            ]
+          },
+          {
+            "name": "property management",
+            "item": [
+              "Property manager", "property maintenance", "property manager/supervisor", "contract management", "investment manager/supervisor"
+            ]
+          },
+          {
+            "name": "Agriculture/forestry/animal husbandry/fishery",
+            "item": [
+              "Feed business", "poultry feeders", "Agronomist/Florist", "Livestock Enginee", "head of a farm", "Aquaculture supervisor", "animal nutrition/Feed research and development"
+            ]
+          },
+          {
+            "name": "Other recruitment information",
+            "item": [
+              "other positions"
+            ]
+          },
+          {
+            "name": "job fair",
+            "item": [
+              "Special job fair", "job fair for new graduates", "comprehensive job fair", "job fair for senior talents"
+            ]
+          }
+        ]
+      }
+    }
+  ]

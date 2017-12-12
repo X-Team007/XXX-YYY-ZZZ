@@ -166,6 +166,12 @@ export default {
 	wholookme: '誰看了我的簡歷',
 	fullTime: '全職',
 	partTime: '兼職',
+	// 支付中心字段
+	payNum: '編號',
+	payMoney: '金額',
+	payType: '支付類型',
+	payStatus: '狀態',
+	payTime: '時間',
 
 	errors20Mobile: '請填寫正確的手機號碼',
 	errors20PasswordLength: '密碼必須包含至少六位字符',

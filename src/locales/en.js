@@ -166,6 +166,12 @@ export default {
 	wholookme: 'Who look me',
 	fullTime: 'full-time',
 	partTime: 'part-time',
+	// 支付中心字段
+	payNum:'number',
+	payMoney:'money',
+	payType:'payment',
+	payStatus:'status',
+	payTime:'time',
 
 	errors20Mobile: 'Please input the correct mobile number',
 	errors20PasswordLength: 'Password contains at least 6 characters',

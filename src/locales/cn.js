@@ -166,6 +166,12 @@ export default {
 	wholookme: '谁看了我的简历',
 	fullTime: '全职',
 	partTime: '兼职',
+	// 支付中心字段
+	payNum: '编号',
+	payMoney: '金额',
+	payType: '支付类型',
+	payStatus: '状态',
+	payTime: '时间',
 
 	errors20Mobile: '请填写正确的手机号码',
 	errors20PasswordLength: '密码至少包含六位字符',

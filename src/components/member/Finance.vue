@@ -71,7 +71,7 @@
                                         <label>{{ lang.financeMoney }}</label>
                                         <input onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'')}).call(this)" />
                                         <em>{{ lang.financeUnit }}</em>
-                                        <button type="button" class="pure-button pure-button-primary">
+                                        <button type="button" class="pure-button pure-button-primary" @click="pay">
                                                 {{ lang.financeSubmit }}
                                         </button>
                                         <i>{{ lang.financeComment }}</i>
@@ -80,7 +80,7 @@
                                         <label>{{ lang.financePay }}</label>
                                         <input type="hidden" name="paytype" v-bind:value=" payType " />
                                         <span v-bind:class=" 'icon-pay icon-pay-alipay' + (payType === 'alipay' ? ' pay-active' : '') "
-                                                v-on:click=" selectPay('alipay') "></span>
+                                                @click=" selectPay('alipay') "></span>
                                         <span v-bind:class=" 'icon-pay icon-pay-wxpay' + (payType === 'wxpay' ? ' pay-active' : '') "
                                                 v-on:click=" selectPay('wxpay') "></span>
                                 </div>
@@ -99,11 +99,11 @@
                                 </button>
                         </div>
                         <div class="listNav pure-g">
-                          <span class="payNum pure-u-6-24">编号</span>
-                          <span class="payMoney pure-u-4-24">金额</span>
-                          <span class="payType pure-u-4-24">支付类型</span>
-                          <span class="payStatus pure-u-4-24">状态</span>
-                          <span class="payTime pure-u-6-24">时间</span>
+                          <span class="payNum pure-u-6-24">{{lang.payNum}}</span>
+                          <span class="payMoney pure-u-4-24">{{lang.payMoney}}</span>
+                          <span class="payType pure-u-4-24">{{lang.payType}}</span>
+                          <span class="payStatus pure-u-4-24">{{lang.payStatus}}</span>
+                          <span class="payTime pure-u-6-24">{{lang.payTime}}</span>
                         </div>
                         <template v-if="recordList.length===0">
                           <span class="noList pure-g">没有充值记录，去充值吧！^.^</span>
@@ -132,6 +132,12 @@ import setting from "../../config/setting";
 export default {
   data() {
     return {
+      data: {
+        total: 100, // 总条目数
+        pages: 0, // 页数
+        limit: 10, // 限制
+        items: [] // 项目
+      },
       tabID: 0,
       payType: "alipay",
       lang: lang(),
@@ -169,11 +175,45 @@ export default {
     };
   },
   methods: {
+    pay() {},
     selectPay(payType) {
       this.payType = payType;
+      switch (this.payType) {
+        case "alipay":
+          api(uri, Object, callback => {});
+          break;
+
+        case "wxpay":
+          api(uri, Object, callback => {});
+          break;
+      }
+      // if (this.payType === "alipay") {
+      //   api(uri, Object, callback => {});
+      // } else {
+      // }
     },
     selectTab(tabID) {
       this.tabID = tabID;
+    },
+    selectTab(articleType, code, begin) {
+      api(
+        "/article/listKnowledge",
+        {
+          articleType: articleType,
+          articleLang: code || langType(),
+          begin: begin || 1,
+          limit: 10
+        },
+        callback => {
+          if (callback.code === 200) {
+            this.data = callback.data;
+          }
+        }
+      );
+    },
+    selectPage(num) {
+      let parts = uriPath().split("/");
+      this.selectTab(parts[3] ? "knowledge#" + parts[3] : null, parts[1], num);
     }
   }
 };
