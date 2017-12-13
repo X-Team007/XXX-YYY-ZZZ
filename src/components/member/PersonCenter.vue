@@ -344,8 +344,8 @@
 		</div>
     <div class="panel full-time">
       <section>
-        <h2 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h2>
-        <h3 data-v-52bbcf05="">{{ lang.privacyResume1st }}</h3>
+        <h2>{{ lang.privacyResume1st }}</h2>
+        <h3>{{ lang.privacyResume1st }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <h4>{{fullTime.job}}</h4>
@@ -361,8 +361,12 @@
           <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
-                <p><span>{{ lang.preResume }}</span></p>
-                <p><span>{{ lang.modResume}}</span></p>
+                <p style="cursor:pointer" @click="preResume()">
+                  <span>{{ lang.preResume }}</span>
+                </p>
+                <p style="cursor:pointer" @click="modResume()">
+                  <span>{{ lang.modResume}}</span>
+                </p>
               </div>
               <!-- <div class="row">
                 <p><span>预览简历</span></p>
@@ -375,8 +379,8 @@
     </div>
     <div class="panel part-time">
       <section>
-        <h2 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h2>
-        <h3 data-v-52bbcf05="">{{ lang.privacyResume2nd }}</h3>
+        <h2>{{ lang.privacyResume2nd }}</h2>
+        <h3>{{ lang.privacyResume2nd }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <h4>{{fullTime.job}}</h4>
@@ -430,6 +434,9 @@ export default {
       }
     };
   },
-  created() {}
+  created() {},
+  methods:{
+
+  }
 };
 </script>

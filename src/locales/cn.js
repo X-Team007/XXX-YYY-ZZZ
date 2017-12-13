@@ -164,6 +164,7 @@ export default {
 	modResume: '修改简历',
 	iseewho: '我看了谁的简历',
 	wholookme: '谁看了我的简历',
+	allTime: '全部',
 	fullTime: '全职',
 	partTime: '兼职',
 	// 支付中心字段

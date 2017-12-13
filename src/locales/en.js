@@ -164,8 +164,9 @@ export default {
 	modResume: 'Modify your resume',
 	iseewho: 'I see who',
 	wholookme: 'Who look me',
-	fullTime: 'full-time',
-	partTime: 'part-time',
+	allTime: 'All',
+	fullTime: 'Full Time',
+	partTime: 'Part Time',
 	// 支付中心字段
 	payNum:'number',
 	payMoney:'money',

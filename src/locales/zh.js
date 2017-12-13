@@ -164,6 +164,7 @@ export default {
 	modResume: '修改簡歷',
 	iseewho: '我看了誰的簡歷',
 	wholookme: '誰看了我的簡歷',
+	allTime: '全部',
 	fullTime: '全職',
 	partTime: '兼職',
 	// 支付中心字段
