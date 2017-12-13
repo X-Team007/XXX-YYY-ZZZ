@@ -167,6 +167,8 @@ export default {
 	allTime: '全部',
 	fullTime: '全職',
 	partTime: '兼職',
+	// 简历查看
+	tips: '还没有内容',
 	// 支付中心字段
 	payNum: '編號',
 	payMoney: '金額',

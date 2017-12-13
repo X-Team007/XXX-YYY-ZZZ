@@ -167,12 +167,14 @@ export default {
 	allTime: 'All',
 	fullTime: 'Full Time',
 	partTime: 'Part Time',
+	// 简历查看
+	tips: '还没有内容',
 	// 支付中心字段
-	payNum:'number',
-	payMoney:'money',
-	payType:'payment',
-	payStatus:'status',
-	payTime:'time',
+	payNum: 'number',
+	payMoney: 'money',
+	payType: 'payment',
+	payStatus: 'status',
+	payTime: 'time',
 
 	errors20Mobile: 'Please input the correct mobile number',
 	errors20PasswordLength: 'Password contains at least 6 characters',

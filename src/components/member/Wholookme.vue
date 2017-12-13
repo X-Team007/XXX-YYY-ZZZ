@@ -145,15 +145,15 @@
       <h1>
         <div class="title">{{templateData.title}}</div>
         <div class="menu">
-          <template v-for="(item,index) in jobs">
-            <a href="javascript:;" :key="index">
-              <p :key="index" :class="{'active':infoInd==index}" @click="getInfo(index)">{{item}}</p>
+          <template v-for="(item,key) in jobs">
+            <a href="javascript:;" :key="key">
+              <p :class="{active:infoKey==key}" @click="getInfo(key)">{{item}}</p>
             </a>
           </template>
         </div>
       </h1>
       <template v-if="jobsContent.length === 0">
-        <p class="tips">没有内容</p>
+        <p class="tips">{{lang.tips}}</p>
       </template>
       <template v-else v-for="(job,ind) in jobsContent">
         <div class="jobs" :key="ind">
@@ -197,16 +197,16 @@ export default {
   data() {
     return {
       data: {
-        begin: 0,
-        total: 0,
+        begin: 0, // 开始
+        total: 0, // 总数、合计
         pages: 0,
-        limit: 10,
+        limit: 10, // 限制、极限
         items: []
       },
       auth: auth(),
       lang: lang(),
       langCode: langType(),
-      infoInd: "allTime",
+      infoKey: "allTime",
       jobs: { allTime: "", fullTime: "", partTime: "" },
       userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
       templateData: {
@@ -280,13 +280,12 @@ export default {
     "el-pagination": Pagination
   },
   created() {
-    this.getJobs();
-    this.getJobTit();
+    this.getJobs(); // 判断字段信息
+    this.getJobTit(); //获取标题
   },
   mounted() {},
   methods: {
     getJobTit() {
-      // 获取 不同组件的 标题
       let td = this.templateData;
       let ur = uriPath().split("/")[3]; // 截取路径的 字段 信息
       switch (ur) {
@@ -305,18 +304,23 @@ export default {
         case "follow":
           td.title = lang("memberNavVII");
       }
-    },
+    }, // 获取 不同组件的 标题
+
     getJobs() {
-      // 获取 全职/兼职 字段
       let job = this.jobs;
       job.allTime = lang("allTime");
       job.fullTime = lang("fullTime");
       job.partTime = lang("partTime");
-    },
-    getInfo(index) {
-      // 设置绑定 全职/兼职 样式类名
-      this.infoInd = index;
-    },
+    }, // 根据语言标识路由判断当前语种 获取 全职/兼职 字段
+    getInfo(key) {
+      this.infoKey = key;
+      let o = {
+        key,
+        code: 200
+      }; // 需要的参数
+      console.log(o);
+      // api(uri, o, callback => {});
+    }, // 设置绑定 全职/兼职 样式类名
     selectPage(num) {
       // let parts = uriPath().split("/");
       let ur = uriPath().split("/")[3];
@@ -342,7 +346,6 @@ export default {
       }
     },
     selectTab(articleType, code, begin) {
-      // 分页组件监听selectPage()方法，然后传参并调用
       api(
         "/article/listKnowledge",
         {
@@ -357,7 +360,7 @@ export default {
           }
         }
       );
-    }
+    } // 分页组件监听selectPage()方法，然后传参并调用
   }
 };
 </script>
