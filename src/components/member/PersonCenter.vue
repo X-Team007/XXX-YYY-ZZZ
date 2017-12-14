@@ -296,16 +296,21 @@
 
 <template>
   <div class="viewport-ucenter-person">
+    <!-- 用户账户信息 -->
 		<div class="viewport-accent panel information">
       <div class="accent">
+        <!-- 用户详细 -->
         <dl class="userInfo">
+          <!-- 用户头像 -->
           <dt>
             <img class="userImg" :src="userSrc" alt="图片地址" title="头像">
           </dt>
           <dd>
+            <!-- 用户名称绑定 -->
             <div class="title">
               <span class="userName">{{lang.PersonCenterHello}}{{userName}}</span>
             </div>
+            <!-- 手机、邮箱绑定 -->
             <div class="binding">
               <Icon name="phone"/>
               <span>{{lang.unverify}}</span>
@@ -316,24 +321,31 @@
             </div>
           </dd>
         </dl>
+        <!-- 用户账户 -->
         <div class="account">
+          <!-- 显示用户余额 -->
           <span class="sum">{{lang.balance}}<b>{{balance}}</b>元</span>
+          <!-- 充值功能 -->
           <button type="button" class="pure-button pure-button-primary">
             {{ lang.pay }}
           </button>
+          <!-- 提现功能 -->
           <button type="button" class="pure-button pure-button-primary">
             {{ lang.withdraw }}
           </button>
           <!-- <span>剩余免费查看次数：<b>3</b></span> -->
         </div>
       </div>
+      <!-- 右侧查看功能 -->
       <div class="checked">
+        <!-- 我看了谁 -->
         <router-link to="iseewho">
           <dl class="checkUs">
             <dt>{{iseewho}}</dt>
             <dd><span>{{lang.iseewho}}</span></dd>
           </dl>
         </router-link>
+        <!-- 谁看了我 -->
         <router-link to="wholookme">
           <dl class="weCheck">
             <dt>{{wholookme}}</dt>
@@ -342,22 +354,30 @@
         </router-link>
       </div>
 		</div>
+    <!-- 全职信息 -->
     <div class="panel full-time">
       <section>
+        <!-- 英文状态标题 -->
         <h2>{{ lang.privacyResume1st }}</h2>
+        <!-- 中文状态标题 -->
         <h3>{{ lang.privacyResume1st }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
+            <!-- 全职职位名称 -->
             <h4>{{fullTime.job}}</h4>
+            <!-- 简历类型 -->
             <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
+            <!-- 更新时间 -->
             <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
           </div>
+          <!-- 档案完整度 -->
           <div class="pure-u-10-24 center">
             <div class="centerCon">
               <span>{{ lang.ArchivalCompleteness }}</span>
               <p><span>{{fullTime.percent}}</span></p>
             </div>
           </div>
+          <!-- 用户 预览/修改简历 功能 -->
           <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
@@ -377,7 +397,9 @@
         </div>
       </section>
     </div>
+    <!-- 兼职信息 -->
     <div class="panel part-time">
+      <!-- 详细注释信息参见 全职信息 -->
       <section>
         <h2>{{ lang.privacyResume2nd }}</h2>
         <h3>{{ lang.privacyResume2nd }}</h3>
@@ -413,7 +435,9 @@
 
 <script>
 import { lang, langType } from "../../locales";
-import { auth } from "../../utils";
+import { api, auth, uriPath } from "../../utils";
+import { Pagination } from "element-ui";
+import setting from "../../config/setting";
 
 export default {
   data() {
@@ -434,9 +458,21 @@ export default {
       }
     };
   },
-  created() {},
-  methods:{
-
+  created() {
+    this.getInfo();
+  },
+  methods: {
+    getInfo() {
+      let id = { openID: auth().openID };
+      console.log(id);
+      api("/member/ucenter", id, callback => {
+        if (callback.code === 200) {
+          console.log(callback);
+        } else {
+          console.log("error");
+        }
+      });
+    }
   }
 };
 </script>

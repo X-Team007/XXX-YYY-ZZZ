@@ -168,7 +168,7 @@ export default {
 	fullTime: 'Full Time',
 	partTime: 'Part Time',
 	// 简历查看
-	tips: '还没有内容',
+	tips: 'There is no content',
 	// 支付中心字段
 	payNum: 'number',
 	payMoney: 'money',

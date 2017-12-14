@@ -242,12 +242,14 @@
 </template>
 
 <script>
-import { auth } from "../../utils"
 import { lang, langType } from "../../locales";
+import { api, auth, uriPath } from "../../utils";
+import { Pagination } from "element-ui";
+import setting from "../../config/setting";
 
 export default {
   data() {
-    console.log(111,auth().openID);
+    console.log(111, auth().openID);
     return {
       tabFulltime: "open",
       tabParttime: "open",
@@ -255,17 +257,74 @@ export default {
       langCode: langType()
     };
   },
+  created() {
+    // 查看简历隐藏状态
+    this.getResume();
+  },
   methods: {
+    getResume() {
+      let uri = "/member/detailPrivacy",
+        o = {
+          openID: auth().openID
+        };
+      api(uri, o, callback => {
+        console.log(callback);
+        if (callback.code === 200) {
+          switch (callback.data.showFulltime) {
+            case true:
+              this.tabFulltime = "open";
+              break;
+
+            case false:
+              this.tabFulltime = "close";
+              break;
+          }
+          switch (callback.xxx.showParttime) {
+            case true:
+              this.tabParttime = "open";
+              break;
+
+            case false:
+              this.tabParttime = "close";
+              break;
+          }
+        } else {
+          console.log("callback错误");
+        }
+      });
+    }, // 封装了获取简历显示隐藏的方法
     changeFulltime(status) {
       this.tabFulltime = status;
       let o = {
-        openID: "3MjFiODU4Mjg0Zjc2NTQ3MjVhZDZhYzk0NjcxMWVlZjFi9",
+        openID: auth().openID,
         type: "FULLTIME",
         show: true
       };
+      this.tabFulltime === "open" ? (o.show = true) : (o.show = false);
+      console.log(o.show);
+      api("/member/editPrivacy", o, callback => {
+        if (callback.code === 200) {
+          alert("设置成功");
+          console.log(callback);
+        } else {
+          alert("设置失败");
+        }
+      });
     },
     changeParttime(status) {
       this.tabParttime = status;
+      let o = {
+        openID: auth().openID,
+        type: "PARTTIME",
+        show: true
+      };
+      api("/member/editPrivacy", o, callback => {
+        if (callback.code === 200) {
+          console.log("设置成功");
+        } else {
+          console.log("设置失败");
+        }
+      });
     },
     setCookie: function(cname, cvalue, exdays) {
       var d = new Date();

@@ -2,9 +2,9 @@
 @import "../../stylesheet/variables.less";
 
 .viewport-password {
-        .pure-form {
-                padding: 0.48rem 0;
-        }
+  .pure-form {
+    padding: 0.48rem 0;
+  }
 }
 </style>
 
@@ -34,15 +34,15 @@
 </template>
 
 <script>
-import { lang, langType } from "../../locales"
+import { lang, langType } from "../../locales";
 
 export default {
-        data: function () {
-                return {
-                        lang: lang(),
-                        langCode: langType()
-                }
-        }
-}
+  data: function() {
+    return {
+      lang: lang(),
+      langCode: langType()
+    };
+  }
+};
 </script>
 

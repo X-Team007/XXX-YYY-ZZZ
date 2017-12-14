@@ -182,7 +182,7 @@
           </div>
         </div>
       </template>
-      <el-pagination :total=" data.total " :page-size=" data.limit " :current-page=" data.begin " layout="prev, pager, next" class="text-align-center" @current-change=" selectPage " :key="ind"></el-pagination>
+      <el-pagination :total="data.total" :page-size="data.limit" :current-page="data.begin" layout="prev, pager, next" class="text-align-center" @current-change="selectPage"></el-pagination>
     </div>
   </div>
 </template>
@@ -280,12 +280,19 @@ export default {
     "el-pagination": Pagination
   },
   created() {
-    this.getJobs(); // 判断字段信息
-    this.getJobTit(); //获取标题
+    this.getJobTit(); // 获取标题 // 判断字段信息
+    this.judge(); // 每次初始化获取固定参数
   },
   mounted() {},
+  computed: {
+    toUp() {
+      let toUp = this.infoKey.toUpperCase();
+      return toUp;
+    }
+  },
   methods: {
     getJobTit() {
+      // 获取 不同组件的 标题
       let td = this.templateData;
       let ur = uriPath().split("/")[3]; // 截取路径的 字段 信息
       switch (ur) {
@@ -304,62 +311,59 @@ export default {
         case "follow":
           td.title = lang("memberNavVII");
       }
-    }, // 获取 不同组件的 标题
-
-    getJobs() {
+      // 根据语言标识路由判断当前语种 获取 全职/兼职 字段
       let job = this.jobs;
       job.allTime = lang("allTime");
       job.fullTime = lang("fullTime");
       job.partTime = lang("partTime");
-    }, // 根据语言标识路由判断当前语种 获取 全职/兼职 字段
+    }, // 初始化获取标题和语言包数据
     getInfo(key) {
       this.infoKey = key;
-      let o = {
-        key,
-        code: 200
-      }; // 需要的参数
-      console.log(o);
-      // api(uri, o, callback => {});
-    }, // 设置绑定 全职/兼职 样式类名
+      this.data.begin = 1;
+      this.judge();
+      console.log("我是点击时的getInfo");
+    }, // 设置绑定 全职/兼职 样式类名; 并请求judge()进行路由判断，并通过selectTab()获取详细数据.
     selectPage(num) {
-      // let parts = uriPath().split("/");
-      let ur = uriPath().split("/")[3];
-      switch (ur) { // 做路由判断
+      console.log("我是分页函数");
+      this.judge(num);
+    },
+    judge(num) {
+      let parts = uriPath().split("/");
+      // console.log(uriPath);
+      switch (parts[3]) { // 做路由判断
         case "wholookme":
-          // this.selectTab(parts[3] ? "wholookme#" + parts[3] : null, parts[1], num);
-          // 调用selectTab()方法
-          console.log("wholookme");
+          this.selectTab("/member/listMe", num);
+          console.log("我请求了wholookme");
           break;
 
         case "iseewho":
-          // td.title = lang("memberNavIV");
-          console.log("我是Iseewho");
+          this.selectTab("/member/listMe", num);
+          console.log("我请求了iseewho");
           break;
 
         case "like":
-          // td.title = lang("memberNavVI");
+          console.log("我是like");
           break;
 
         case "follow":
-          // td.title = lang("memberNavVII");
+          console.log("我是follow");
           break;
       }
-    },
-    selectTab(articleType, code, begin) {
-      api(
-        "/article/listKnowledge",
-        {
-          articleType: articleType,
-          articleLang: code || langType(),
-          begin: begin || 1,
-          limit: 10
-        },
-        callback => {
-          if (callback.code === 200) {
-            this.data = callback.data;
-          }
+    }, // 路由判断
+    selectTab(uri, number) {
+      let o = {
+        openID: auth().openID,
+        type: this.toUp,
+        begin: number || 1,
+        limit: 10
+      };
+      api(uri, o, callback => {
+        console.log(o);
+        if (callback.code === 200) {
+          this.data = callback.data;
+          console.log(callback);
         }
-      );
+      });
     } // 分页组件监听selectPage()方法，然后传参并调用
   }
 };

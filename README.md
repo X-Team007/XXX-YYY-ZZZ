@@ -4,3 +4,10 @@
 
 样式
 border-radius: .08rem; // default
+
+字符串处理
+var o;
+o.split("空格")
+
+openId获取
+let id = { openID: auth().openID };
