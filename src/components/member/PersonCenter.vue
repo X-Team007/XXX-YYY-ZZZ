@@ -368,13 +368,13 @@
             <!-- 简历类型 -->
             <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
             <!-- 更新时间 -->
-            <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
+            <p>{{ lang.updated }}<span>{{fullTime.resumeUpdate}}</span></p>
           </div>
           <!-- 档案完整度 -->
           <div class="pure-u-10-24 center">
             <div class="centerCon">
               <span>{{ lang.ArchivalCompleteness }}</span>
-              <p><span>{{fullTime.percent}}</span></p>
+              <p><span>{{fullTime.resumeComplete}}</span></p>
             </div>
           </div>
           <!-- 用户 预览/修改简历 功能 -->
@@ -406,7 +406,7 @@
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <h4>{{fullTime.job}}</h4>
-            <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
+            <p>{{ lang.type }}<span>{{partTime.expectCountry}}</span></p>
             <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
           </div>
           <div class="pure-u-10-24 center">
@@ -448,14 +448,33 @@ export default {
       userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
       userName: "京典一线",
       balance: "365",
-      iseewho: "10",
-      wholookme: "10",
+      iseewho: "",
+      wholookme: "",
       fullTime: {
-        job: "大堂经理",
-        type: "普通简历",
-        time: "2017.08.09",
-        percent: "70%"
-      }
+        // job: "大堂经理",
+        // type: "普通简历",
+        // time: "2017.08.09",
+        // percent: "70%"
+        expectCity: "",
+        expectCountry: "",
+        expectProvince: "",
+        expectTown: "",
+        resumeComplete: 0,
+        resumeUpdate: "",
+        signature: "",
+        skill: []
+      },
+      partTime: {
+        expectCity: "",
+        expectCountry: "",
+        expectProvince: "",
+        expectTown: "",
+        resumeComplete: 0,
+        resumeUpdate: "",
+        signature: "",
+        skill: []
+      },
+      statusMobile: ""
     };
   },
   created() {
@@ -466,8 +485,14 @@ export default {
       let id = { openID: auth().openID };
       console.log(id);
       api("/member/ucenter", id, callback => {
+        console.log(callback);
         if (callback.code === 200) {
-          console.log(callback);
+          // console.log(callback);
+          this.fullTime = callback.data.fulltime;
+          this.partTime = callback.data.parttime;
+          this.iseewho = callback.data.seeWho;
+          this.wholookme = callback.data.lookMe;
+          this.statusMobile = callback.data.statusMobile;
         } else {
           console.log("error");
         }

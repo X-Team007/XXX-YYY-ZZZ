@@ -210,7 +210,7 @@ export default {
       jobs: { allTime: "", fullTime: "", partTime: "" },
       userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
       templateData: {
-        title: ""
+        title: "" // 动态模板的标题
       },
       jobsContent: [
         {
@@ -337,7 +337,7 @@ export default {
           break;
 
         case "iseewho":
-          this.selectTab("/member/listMe", num);
+          this.selectTab("/member/listWho", num);
           console.log("我请求了iseewho");
           break;
 
@@ -355,7 +355,7 @@ export default {
         openID: auth().openID,
         type: this.toUp,
         begin: number || 1,
-        limit: 10
+        limit: 2
       };
       api(uri, o, callback => {
         console.log(o);

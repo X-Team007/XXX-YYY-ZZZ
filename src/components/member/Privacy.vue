@@ -270,26 +270,15 @@ export default {
       api(uri, o, callback => {
         console.log(callback);
         if (callback.code === 200) {
-          switch (callback.data.showFulltime) {
-            case true:
-              this.tabFulltime = "open";
-              break;
+          callback.data.showFulltime
+            ? (this.tabFulltime = "open")
+            : (this.tabFulltime = "close");
 
-            case false:
-              this.tabFulltime = "close";
-              break;
-          }
-          switch (callback.xxx.showParttime) {
-            case true:
-              this.tabParttime = "open";
-              break;
-
-            case false:
-              this.tabParttime = "close";
-              break;
-          }
+          callback.data.showParttime
+            ? (this.tabParttime = "open")
+            : (this.tabParttime = "close");
         } else {
-          console.log("callback错误");
+          alert("callback错误");
         }
       });
     }, // 封装了获取简历显示隐藏的方法
@@ -297,17 +286,21 @@ export default {
       this.tabFulltime = status;
       let o = {
         openID: auth().openID,
-        type: "FULLTIME",
-        show: true
+        resumeType: "FULLTIME",
+        resumeShow: true
       };
-      this.tabFulltime === "open" ? (o.show = true) : (o.show = false);
-      console.log(o.show);
+      this.tabFulltime === "open"
+        ? (o.resumeShow = true)
+        : (o.resumeShow = false);
+      console.log(o);
       api("/member/editPrivacy", o, callback => {
+        console.log(callback);
         if (callback.code === 200) {
-          alert("设置成功");
-          console.log(callback);
+          console.log("设置成功");
+        } else if (callback.code === 2102) {
+          alert("无效的简历类型");
         } else {
-          alert("设置失败");
+          console.log("设置失败");
         }
       });
     },
@@ -315,50 +308,22 @@ export default {
       this.tabParttime = status;
       let o = {
         openID: auth().openID,
-        type: "PARTTIME",
-        show: true
+        resumeType: "PARTTIME",
+        resumeShow: true
       };
+      this.tabParttime === "open"
+        ? (o.resumeShow = true)
+        : (o.resumeShow = false);
       api("/member/editPrivacy", o, callback => {
+        console.log(callback);
         if (callback.code === 200) {
           console.log("设置成功");
+        } else if (callback.code === 2102) {
+          alert("无效的简历类型");
         } else {
           console.log("设置失败");
         }
       });
-    },
-    setCookie: function(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-      var expires = "expires=" + d.toUTCString();
-      console.info(cname + "=" + cvalue + "; " + expires);
-      document.cookie = cname + "=" + cvalue + "; " + expires;
-      console.info(document.cookie);
-    },
-    //获取cookie
-    getCookie: function(cname) {
-      var name = cname + "=";
-      var ca = document.cookie.split(";");
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == " ") c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-      }
-      return "";
-    },
-    //清除cookie
-    clearCookie: function() {
-      this.setCookie("username", "", -1);
-    },
-    checkCookie: function() {
-      var user = this.getCookie("username");
-      if (user != "") {
-        alert("Welcome again " + user);
-      } else {
-        user = prompt("Please enter your name:", "");
-        if (user != "" && user != null) {
-          this.setCookie("username", user, 365);
-        }
-      }
     }
   }
 };
