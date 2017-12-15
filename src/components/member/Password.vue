@@ -80,18 +80,66 @@ export default {
             console.log(callback);
             switch (callback.code) {
               case 200:
-                this.success = true;
+                this.tips = false;
+                this.tipsCont = "修改成功";
+                this.tips = true;
                 this.oldPassWord = "";
                 this.newPassWord1 = "";
                 this.newPassWord2 = "";
                 break;
 
               case 2002:
-                this.tipsCont = "密码包含至少6个字符";
+                this.tips = false;
+                this.tipsCont = "账号密码必须不少于6位";
+                this.tips = true;
+                
+                break;
+              
+              case 2003:
+                this.tips = false;
+                this.tipsCont = "帐号密码必须包含大写字母";
+                this.tips = true;
+                
+                break;
+
+              case 2004:
+                this.tips = false;
+                this.tipsCont = "帐号密码必须包含小写字母";
+                this.tips = true;
+                
+                break;
+
+              case 2005:
+                this.tips = false;
+                this.tipsCont = "帐号密码必须包含数字";
+                this.tips = true;
+                break;
+
+              case 2006:
+                this.tipsCont = "帐号密码必须和确认密码一致";
+                this.tips = true;
+                break;
+
+              case 2101:
+                this.tips = false;
+                this.tipsCont = "账户信息无效";
+                this.tips = true;
+                break;
+
+              case 2110:
+                this.tips = false;
+                this.tipsCont = "帐号旧密码错误";
+                this.tips = true;
+                break;
+
+              case 2013:
+                this.tips = false;
+                this.tipsCont = "更新密码失败";
+                this.tips = true;
                 break;
             }
           })
-        : (this.repeatPass = true);
+        : null;
     }
   }
 };

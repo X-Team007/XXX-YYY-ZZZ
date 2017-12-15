@@ -64,7 +64,8 @@
 
 <template>
         <div class="viewport-finance">
-                <div class="pay panel">
+                <!-- 立即充值 -->
+                <div class="pay panel"> 
                         <h1>{{ lang.financeChong }}</h1>
                         <form class="pure-form pure-form-aligned">
                                 <div class="pure-control-group label-money">
@@ -86,15 +87,16 @@
                                 </div>
                         </form>
                 </div>
+                <!-- 财务明细 -->
                 <div class="record panel">
                         <h1>{{ lang.financeMing }}</h1>
                         <div class="tab">
                                 <button v-bind:class=" 'pure-button pure-button-primary' + (tabID === 0 ? ' tab-active' : '') "
-                                        v-on:click=" selectTab(0) ">
+                                        v-on:click=" selectTab(1) ">
                                         {{ lang.financeRecordI }}
                                 </button>
                                 <button v-bind:class=" 'pure-button pure-button-primary' + (tabID === 1 ? ' tab-active' : '') "
-                                        v-on:click=" selectTab(1) ">
+                                        v-on:click=" selectTab(2) ">
                                         {{ lang.financeRecordII }}
                                 </button>
                         </div>
@@ -134,11 +136,12 @@ export default {
     return {
       data: {
         total: 100, // 总条目数
-        pages: 0, // 页数
+        pages: 1, // 页数
         limit: 10, // 限制
         items: [] // 项目
       },
-      tabID: 0,
+      orderType: 1,
+      tabID: 1,
       payType: "alipay",
       lang: lang(),
       langCode: langType(),
@@ -174,46 +177,43 @@ export default {
       ]
     };
   },
+  created(){
+    this.getPayInfo();
+  },
   methods: {
-    pay() {},
+    getPayInfo(){
+      let o={
+        openID: auth().openID,
+        orderType: this.orderType,
+        begin: this.data.pages,
+        limit: 10
+      };
+      console.log(o);
+      api("/member/listOrder", o, callback=>{
+        console.log(callback);
+      })
+    },
+    // pay() {},
     selectPay(payType) {
       this.payType = payType;
       switch (this.payType) {
         case "alipay":
-          api(uri, Object, callback => {});
+          // api(uri, Object, callback => {});
           break;
 
         case "wxpay":
-          api(uri, Object, callback => {});
+          // api(uri, Object, callback => {});
           break;
       }
-      // if (this.payType === "alipay") {
-      //   api(uri, Object, callback => {});
-      // } else {
-      // }
     },
     selectTab(tabID) {
-      this.tabID = tabID;
-    },
-    selectTab(articleType, code, begin) {
-      api(
-        "/article/listKnowledge",
-        {
-          articleType: articleType,
-          articleLang: code || langType(),
-          begin: begin || 1,
-          limit: 10
-        },
-        callback => {
-          if (callback.code === 200) {
-            this.data = callback.data;
-          }
-        }
-      );
+      this.orderType = tabID;
+      this.data.pages=1;
+      this.getPayInfo();
     },
     selectPage(num) {
-      let parts = uriPath().split("/");
-      this.selectTab(parts[3] ? "knowledge#" + parts[3] : null, parts[1], num);
+      this.data.pages=num;
+      this.getPayInfo();
     }
   }
 };

@@ -69,6 +69,9 @@
         .icon:nth-of-type(1) {
           margin: 0 0.1rem 0 0;
         }
+        .verify {
+          fill: @theme-color-accent-lighten;
+        }
       }
       .account {
         display: inline-block;
@@ -184,14 +187,18 @@
           padding-left: 0.5rem;
           box-sizing: border-box;
           h4 {
-            margin-bottom: 0.98rem;
+            margin-bottom: 0.43rem;
             color: @theme-color-accent-default;
           }
           p {
             color: @theme-font-color-default;
           }
           p:nth-of-type(1) {
-            margin-bottom: 0.98rem;
+            margin-bottom: 0.43rem;
+          }
+          span {
+            display: inline-block;
+            margin-top: 0.1rem;
           }
         }
         .center {
@@ -312,12 +319,12 @@
             </div>
             <!-- 手机、邮箱绑定 -->
             <div class="binding">
-              <Icon name="phone"/>
-              <span>{{lang.unverify}}</span>
-              <Icon name="youxiang"></Icon>
-              <span>{{lang.unverify}}</span>
-              <Icon name="yanzheng"></Icon>
-              <span>{{lang.unverify}}</span>
+              <Icon name="phone" :class="{verify:statusMobile}"/>
+              <span>{{statusMobile?lang.verify:lang.unverify}}</span>
+              <Icon name="youxiang" :class="{verify:statusEmail}"></Icon>
+              <span>{{statusEmail?lang.verify:lang.unverify}}</span>
+              <Icon name="yanzheng" :class="{verify:statusIDCard}"></Icon>
+              <span>{{statusIDCard?lang.verify:lang.unverify}}</span>
             </div>
           </dd>
         </dl>
@@ -364,11 +371,11 @@
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <!-- 全职职位名称 -->
-            <h4>{{fullTime.job}}</h4>
+            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{fullTime.localeCountry}}{{fullTime.localeProvince}}</span></h4>
             <!-- 简历类型 -->
-            <p>{{ lang.type }}<span>{{fullTime.type}}</span></p>
+            <p>{{ lang.home }}<span>{{fullTime.localeCity}}{{fullTime.localeProvince}}</span></p>
             <!-- 更新时间 -->
-            <p>{{ lang.updated }}<span>{{fullTime.resumeUpdate}}</span></p>
+            <p>{{ lang.updated }}<br/><span>{{fullTime.resumeUpdate}}</span></p>
           </div>
           <!-- 档案完整度 -->
           <div class="pure-u-10-24 center">
@@ -405,21 +412,25 @@
         <h3>{{ lang.privacyResume2nd }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
-            <h4>{{fullTime.job}}</h4>
-            <p>{{ lang.type }}<span>{{partTime.expectCountry}}</span></p>
-            <p>{{ lang.updated }}<span>{{fullTime.time}}</span></p>
+            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{partTime.localeCountry}}{{partTime.localeProvince}}</span></h4>
+            <p>{{ lang.home }}<br/><span>{{partTime.localeCity}}{{partTime.localeTown}}</span></p>
+            <p>{{ lang.updated }}<br/><span>{{partTime.resumeUpdate}}</span></p>
           </div>
           <div class="pure-u-10-24 center">
             <div class="centerCon">
               <span>{{ lang.ArchivalCompleteness }}</span>
-              <p><span>{{fullTime.percent}}</span></p>
+              <p><span>{{partTime.resumeComplete}}</span></p>
             </div>
           </div>
           <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
-                <p><span>{{ lang.preResume }}</span></p>
-                <p><span>{{ lang.modResume }}</span></p>
+                <router-link :to="{ path: '/'+ langCode + '/parttime/detail/' }">
+                  <p><span>{{ lang.preResume }}</span></p>
+                </router-link>
+                <router-link :to="{ path: '/'+ langCode + '/parttime/first/' }">
+                  <p><span>{{ lang.modResume }}</span></p>
+                </router-link>
               </div>
               <!-- <div class="row">
                 <p><span>预览简历</span></p>
@@ -474,7 +485,9 @@ export default {
         signature: "",
         skill: []
       },
-      statusMobile: ""
+      statusMobile: "",
+      statusEmail: "",
+      statusIDCard: ""
     };
   },
   created() {
@@ -488,11 +501,19 @@ export default {
         console.log(callback);
         if (callback.code === 200) {
           // console.log(callback);
-          this.fullTime = callback.data.fulltime;
-          this.partTime = callback.data.parttime;
+          // this.userSrc = callback.data.img;
+          this.userName =
+            callback.data.realname ||
+            callback.data.userName ||
+            callback.data.mobile;
+          this.balance = callback.data.money / 100;
           this.iseewho = callback.data.seeWho;
           this.wholookme = callback.data.lookMe;
+          this.fullTime = callback.data.fulltime;
+          this.partTime = callback.data.parttime;
           this.statusMobile = callback.data.statusMobile;
+          this.statusEmail = callback.data.statusEmail;
+          this.statusIDCard = callback.data.statusIDCard;
         } else {
           console.log("error");
         }
