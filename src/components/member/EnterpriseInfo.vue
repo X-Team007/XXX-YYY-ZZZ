@@ -69,6 +69,9 @@
         .icon:nth-of-type(1) {
           margin: 0 0.1rem 0 0;
         }
+        .verify {
+          fill: @theme-color-accent-lighten;
+        }
       }
       .account {
         display: inline-block;
@@ -307,12 +310,12 @@
               <span class="userName">{{lang.PersonCenterHello}}{{userName}}</span>
             </div>
             <div class="binding">
-              <Icon name="phone"/>
-              <span>{{lang.unverify}}</span>
-              <Icon name="youxiang"></Icon>
-              <span>{{lang.unverify}}</span>
-              <Icon name="yanzheng"></Icon>
-              <span>{{lang.unverify}}</span>
+              <Icon name="phone" :class="{verify:statusMobile}"/>
+              <span>{{statusMobile?lang.verify:lang.unverify}}</span>
+              <Icon name="youxiang" :class="{verify:statusEmail}"></Icon>
+              <span>{{statusEmail?lang.verify:lang.unverify}}</span>
+              <Icon name="yanzheng" :class="{verify:statusIDCard}"></Icon>
+              <span>{{statusIDCard?lang.verify:lang.unverify}}</span>
             </div>
           </dd>
         </dl>
@@ -409,7 +412,9 @@
 
 <script>
 import { lang, langType } from "../../locales";
-import { auth } from "../../utils";
+import { api, auth, uriPath } from "../../utils";
+import { Pagination } from "element-ui";
+import setting from "../../config/setting";
 
 export default {
   data() {
@@ -422,14 +427,38 @@ export default {
       balance: "365",
       iseewho: "10",
       wholookme: "10",
-      fullTime: {
-        job: "大堂经理",
-        type: "普通简历",
-        time: "2017.08.09",
-        percent: "70%"
-      }
+      statusMobile: "",
+      statusEmail: "",
+      statusIDCard: ""
     };
   },
-  created() {}
+  created() {
+    this.getInfo();
+  },
+  methods: {
+    getInfo() {
+      let id = { openID: auth().openID };
+      console.log(id);
+      api("/member/ucenter", id, callback => {
+        console.log(callback);
+        if (callback.code === 200) {
+          // console.log(callback);
+          // this.userSrc = callback.data.img;
+          this.userName =
+            callback.data.realname ||
+            callback.data.userName ||
+            callback.data.mobile;
+          this.balance = callback.data.money / 100;
+          this.iseewho = callback.data.seeWho;
+          this.wholookme = callback.data.lookMe;
+          this.statusMobile = callback.data.statusMobile;
+          this.statusEmail = callback.data.statusEmail;
+          this.statusIDCard = callback.data.statusIDCard;
+        } else {
+          console.log("error");
+        }
+      });
+    }
+  }
 };
 </script>

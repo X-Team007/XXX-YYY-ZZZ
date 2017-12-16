@@ -187,7 +187,10 @@
           padding-left: 0.5rem;
           box-sizing: border-box;
           h4 {
+            overflow: hidden;
             margin-bottom: 0.43rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             color: @theme-color-accent-default;
           }
           p {
@@ -371,7 +374,7 @@
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <!-- 全职职位名称 -->
-            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{fullTime.localeCountry}}{{fullTime.localeProvince}}</span></h4>
+            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{fullTime.expectWork}}</span></h4>
             <!-- 简历类型 -->
             <p>{{ lang.home }}<span>{{fullTime.localeCity}}{{fullTime.localeProvince}}</span></p>
             <!-- 更新时间 -->
@@ -412,7 +415,7 @@
         <h3>{{ lang.privacyResume2nd }}</h3>
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
-            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{partTime.localeCountry}}{{partTime.localeProvince}}</span></h4>
+            <h4>{{ lang.skill }}&nbsp;&nbsp;&nbsp;<span>{{partTime.skill[0]}}、{{partTime.skill[1]}}</span></h4>
             <p>{{ lang.home }}<br/><span>{{partTime.localeCity}}{{partTime.localeTown}}</span></p>
             <p>{{ lang.updated }}<br/><span>{{partTime.resumeUpdate}}</span></p>
           </div>
