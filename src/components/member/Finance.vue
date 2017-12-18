@@ -43,9 +43,6 @@
         padding-left: 0.5rem;
         text-align: left;
       }
-    }
-    .recordList {
-      background: #f1f1f1;
       .status {
         color: #008000;
       }
@@ -72,7 +69,7 @@
                                         <label>{{ lang.financeMoney }}</label>
                                         <input onkeyup="(this.v=function(){this.value=this.value.replace(/[^0-9-]+/,'')}).call(this)" />
                                         <em>{{ lang.financeUnit }}</em>
-                                        <button type="button" class="pure-button pure-button-primary" @click="pay">
+                                        <button type="button" class="pure-button pure-button-primary" @click="">
                                                 {{ lang.financeSubmit }}
                                         </button>
                                         <i>{{ lang.financeComment }}</i>
@@ -107,19 +104,16 @@
                           <span class="payStatus pure-u-4-24">{{lang.payStatus}}</span>
                           <span class="payTime pure-u-6-24">{{lang.payTime}}</span>
                         </div>
-                        <template v-if="recordList.length===0">
-                          <span class="noList pure-g">没有充值记录，去充值吧！^.^</span>
-                        </template>
-                        <template v-else v-for="(list,index) in recordList">
-                          <div class="recordList pure-g" :key="index">
-                            <span class="payNum pure-u-6-24">{{list.num}}</span>
-                            <span class="payMoney pure-u-4-24">{{list.money}}</span>
-                            <span class="payType pure-u-4-24">{{list.type}}</span>
-                            <span class="payStatus status pure-u-4-24">{{list.status}}</span>
-                            <span class="payTime pure-u-6-24">{{list.time}}</span>
-                          </div>
-                        </template>
-                        <el-pagination :total=" data.total " :page-size=" data.limit " :current-page=" data.begin " layout="prev, pager, next" class="text-align-center" @current-change=" selectPage " :key="ind"></el-pagination>
+                        <template v-for="buf of data.items" :key="buf">
+                          <div class="recordList pure-g">
+                            <span class="payNum pure-u-6-24">{{buf.orderID}}</span>
+                            <span class="payMoney pure-u-4-24">{{buf.orderMoney/100}}</span>
+                            <span class="payType pure-u-4-24">{{buf.orderPay}}</span>
+                            <span class="payStatus status pure-u-4-24">{{buf.orderStatus}}</span>
+                            <span class="payTime pure-u-6-24">{{buf.orderSubmit}}</span>
+                          </div> 
+                        </template> 
+                        <el-pagination :total=" data.total " :page-size=" data.limit " :current-page=" data.begin " layout="prev, pager, next" class="text-align-center" @current-change=" selectPage "></el-pagination>
                 </div>
                 
         </div>
@@ -135,9 +129,10 @@ export default {
   data() {
     return {
       data: {
-        total: 100, // 总条目数
+        total: 3, // 总条目数
         pages: 1, // 页数
         limit: 10, // 限制
+        begin: 1,
         items: [] // 项目
       },
       orderType: 1,
@@ -145,55 +140,41 @@ export default {
       payType: "alipay",
       lang: lang(),
       langCode: langType(),
-      recordList: [
-        {
-          num: "12314124q52341",
-          money: "5680",
-          type: "手动",
-          status: "成功",
-          time: "2017-12-12 16:07"
-        },
-        {
-          num: "12314124q52341",
-          money: "5680",
-          type: "手动",
-          status: "成功",
-          time: "2017-12-12 16:07"
-        },
-        {
-          num: "12314124q52341",
-          money: "5680",
-          type: "手动",
-          status: "成功",
-          time: "2017-12-12 16:07"
-        },
-        {
-          num: "12314124q52341",
-          money: "5680",
-          type: "手动",
-          status: "成功",
-          time: "2017-12-12 16:07"
-        }
-      ]
+      list: [],
+      pd: ""
     };
   },
-  created(){
+  components: {
+    "el-pagination": Pagination
+  },
+  beforeCreate() {
+    console.log("beforeCreate");
+  },
+  created() {
     this.getPayInfo();
+    console.log("created");
   },
   methods: {
-    getPayInfo(){
-      let o={
+    getPayInfo() {
+      let o = {
         openID: auth().openID,
         orderType: this.orderType,
         begin: this.data.pages,
         limit: 10
       };
       console.log(o);
-      api("/member/listOrder", o, callback=>{
+      api("/member/listOrder", o, callback => {
         console.log(callback);
-      })
+        if (callback.code === 200) {
+          this.data.items = callback.data.items;
+          this.data.total = callback.data.total;
+          this.data.pages = callback.data.pages;
+          this.data.limit = callback.data.limit;
+          this.data.begin = callback.data.begin;
+          console.log("data", this.data.items);
+        }
+      });
     },
-    // pay() {},
     selectPay(payType) {
       this.payType = payType;
       switch (this.payType) {
@@ -208,11 +189,11 @@ export default {
     },
     selectTab(tabID) {
       this.orderType = tabID;
-      this.data.pages=1;
+      this.data.pages = 1;
       this.getPayInfo();
     },
     selectPage(num) {
-      this.data.pages=num;
+      this.data.pages = num;
       this.getPayInfo();
     }
   }

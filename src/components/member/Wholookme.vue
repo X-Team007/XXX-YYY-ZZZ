@@ -181,6 +181,7 @@
             </div>
           </div>
         </div>
+
       </template>
       <el-pagination :total="data.total" :page-size="data.limit" :current-page="data.begin" layout="prev, pager, next" class="text-align-center" @current-change="selectPage"></el-pagination>
     </div>
@@ -358,10 +359,46 @@ export default {
         limit: 2
       };
       api(uri, o, callback => {
-        console.log(o);
+        console.log(o, callback);
         if (callback.code === 200) {
-          this.data = callback.data;
-          console.log(callback);
+          let key;
+          let arr = [
+            { a: 1, b: "sdf", c: "asqf" },
+            { a: 2, b: "sdf5", c: "aasqf" },
+            { a: 31, b: "314sdf", c: "496asqf" },
+            { a: 201, b: "131sdf", c: "5644asqf" },
+            { a: 61, b: "546sdf", c: "546asqf" }
+          ];
+          for (key in arr) {
+            let obj = {};
+            if (arr[key].xxx === "") {
+              obj.userSrc = "";
+              obj.name = "";
+              obj.sex = "";
+              obj.home = "";
+              obj.exp = "";
+              obj.label1 = "";
+              obj.label2 = "";
+              obj.label3 = "";
+              obj.label4 = "";
+              obj.post = "";
+              this.jobsContent.push(obj);
+            } else {
+              obj = {
+                userSrc: "",
+                name: "",
+                sex: "",
+                home: "",
+                exp: "",
+                label1: "",
+                label2: "",
+                label3: "",
+                label4: "",
+                post: ""
+              };
+              this.jobsContent.push(obj);
+            }
+          }
         }
       });
     } // 分页组件监听selectPage()方法，然后传参并调用

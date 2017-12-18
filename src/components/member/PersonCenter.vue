@@ -374,7 +374,7 @@
         <div class="pure-g jobInfo">
           <div class="pure-u-6-24 left">
             <!-- 全职职位名称 -->
-            <h4>{{ lang.location }}&nbsp;&nbsp;&nbsp;<span>{{fullTime.expectWork}}</span></h4>
+            <h4>{{ lang.post }}&nbsp;&nbsp;&nbsp;<span>{{fullTime.expectWork}}</span></h4>
             <!-- 简历类型 -->
             <p>{{ lang.home }}<span>{{fullTime.localeCity}}{{fullTime.localeProvince}}</span></p>
             <!-- 更新时间 -->
