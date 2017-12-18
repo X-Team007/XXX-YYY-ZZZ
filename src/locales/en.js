@@ -170,6 +170,8 @@ export default {
 	allTime: 'All',
 	fullTime: 'Full Time',
 	partTime: 'Part Time',
+	enterprise: 'Enterprise',
+	person: 'Person',
 	// 简历查看
 	tips: 'There is no content',
 	// 支付中心字段

@@ -163,7 +163,7 @@
           <div class="info">
             <div class="row1">
               <h3 class="name">{{job.name}}</h3>
-              <span class="sex">{{job.sex}}</span>
+              <span class="sex" :class="{'qiye':job.sex==='企业', 'zhengfu':job.sex==='政府', 'zuzhi':job.sex==='组织'}">{{job.sex}}</span>
             </div>
             <div class="row2">
               <span class="home">{{job.home}}</span>
@@ -198,17 +198,17 @@ export default {
   data() {
     return {
       data: {
-        begin: 0, // 开始
+        begin: 1, // 开始
         total: 0, // 总数、合计
         pages: 0,
-        limit: 10, // 限制、极限
+        limit: 2, // 限制、极限
         items: []
       },
       auth: auth(),
       lang: lang(),
       langCode: langType(),
-      infoKey: "allTime",
-      jobs: { allTime: "", fullTime: "", partTime: "" },
+      infoKey: "all",
+      jobs: { all: "", enterprise: "", person: "" },
       userSrc: "http://i2.cfimg.com/611341/c69b534d645c1d55.png",
       templateData: {
         title: "" // 动态模板的标题
@@ -314,9 +314,9 @@ export default {
       }
       // 根据语言标识路由判断当前语种 获取 全职/兼职 字段
       let job = this.jobs;
-      job.allTime = lang("allTime");
-      job.fullTime = lang("fullTime");
-      job.partTime = lang("partTime");
+      job.all = lang("allTime");
+      job.enterprise = lang("enterprise");
+      job.person = lang("person");
     }, // 初始化获取标题和语言包数据
     getInfo(key) {
       this.infoKey = key;
@@ -361,22 +361,34 @@ export default {
       api(uri, o, callback => {
         console.log(o, callback);
         if (callback.code === 200) {
-          let key;
-          let arr = [
-            { a: 1, b: "sdf", c: "asqf" },
-            { a: 2, b: "sdf5", c: "aasqf" },
-            { a: 31, b: "314sdf", c: "496asqf" },
-            { a: 201, b: "131sdf", c: "5644asqf" },
-            { a: 61, b: "546sdf", c: "546asqf" }
-          ];
-          for (key in arr) {
+          this.data = callback.data;
+          this.jobsContent = [];
+          let items = callback.data.items;
+          for (let key in items) {
             let obj = {};
-            if (arr[key].xxx === "") {
-              obj.userSrc = "";
-              obj.name = "";
-              obj.sex = "";
-              obj.home = "";
-              obj.exp = "";
+            // 判断企业/个人
+            if (items[key].isEnterprise === "true") {
+              switch (items[key].enterpriseType) {
+                case 1:
+                  console.log("企业");
+                  obj.sex = "企业";
+                  break;
+
+                case 2:
+                  console.log("政府");
+                  obj.sex = "政府";
+                  break;
+
+                case 3:
+                  console.log("组织");
+                  obj.sex = "组织";
+                  break;
+              }
+              obj.isEnterprise = items[key].isEnterprise;
+              obj.userSrc = items[key].img;
+              obj.name = items[key].username || items[key].mobile;
+              obj.home = items[key].enterpriseAddress;
+              obj.exp = items[key].enterpriseDescription;
               obj.label1 = "";
               obj.label2 = "";
               obj.label3 = "";
@@ -385,7 +397,7 @@ export default {
               this.jobsContent.push(obj);
             } else {
               obj = {
-                userSrc: "",
+                userSrc: "items[key].img",
                 name: "",
                 sex: "",
                 home: "",
@@ -398,7 +410,9 @@ export default {
               };
               this.jobsContent.push(obj);
             }
+            console.log(this.jobsContent);
           }
+        } else {
         }
       });
     } // 分页组件监听selectPage()方法，然后传参并调用

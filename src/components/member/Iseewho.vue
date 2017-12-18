@@ -358,10 +358,58 @@ export default {
         limit: 2
       };
       api(uri, o, callback => {
-        console.log(o);
+        console.log(o, callback);
         if (callback.code === 200) {
           this.data = callback.data;
-          console.log(callback);
+          // this.jobsContent = [];
+          let items = callback.data.items;
+          for (let key in items) {
+            let obj = {};
+            // 判断企业/个人
+            // if (items[key].isEnterprise === "true") {
+              // switch (items[key].enterpriseType) {
+              // case 1:
+              //   console.log("企业");
+              //   obj.sex = "企业";
+              //   break;
+              // case 2:
+              //   console.log("政府");
+              //   obj.sex = "政府";
+              //   break;
+              // case 3:
+              //   console.log("组织");
+              //   obj.sex = "组织";
+              //   break;
+              // }
+              // obj.isEnterprise = items[key].isEnterprise;
+              // obj.userSrc = "";
+              // obj.name = items[key].mobile;
+              // obj.home = items[key].enterpriseAddress;
+              // obj.exp = items[key].enterpriseDescription;
+              // obj.label1 = "";
+              // obj.label2 = "";
+              // obj.label3 = "";
+              // obj.label4 = "";
+              // obj.post = "";
+              // this.jobsContent.push(obj);
+            // } else {
+              // obj = {
+                // userSrc: "items[key].img",
+                // name: "",
+                // sex: "",
+                // home: "",
+                // exp: "",
+                // label1: "",
+                // label2: "",
+                // label3: "",
+                // label4: "",
+                // post: ""
+              // };
+              // this.jobsContent.push(obj);
+            // }
+            console.log(this.jobsContent);
+          }
+        } else {
         }
       });
     } // 分页组件监听selectPage()方法，然后传参并调用

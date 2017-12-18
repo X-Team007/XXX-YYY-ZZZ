@@ -391,10 +391,10 @@
           <div class="pure-u-8-24 right" style="">
             <div class="rightCon">
               <div class="row">
-                <p style="cursor:pointer" @click="preResume()">
+                <p style="cursor:pointer">
                   <span>{{ lang.preResume }}</span>
                 </p>
-                <p style="cursor:pointer" @click="modResume()">
+                <p style="cursor:pointer">
                   <span>{{ lang.modResume}}</span>
                 </p>
               </div>

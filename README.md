@@ -11,3 +11,5 @@ o.split("空格")
 
 openId获取
 let id = { openID: auth().openID };
+
+uriPath为路由路径
